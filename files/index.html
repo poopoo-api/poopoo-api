@@ -1,298 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="PooPoo API 💩">
-    <meta property="og:description" content="A very poopy api that you may use">
-    <meta property="og:image" content="https://api.frostzzone.repl.co/the-very-original-image.ico">
+    <meta property="og:description" content="A very poopy api that you might use">
+    <meta property="og:image" content="the-very-original-image">
     <title>PooPoo API 💩</title>
-  <link rel="icon" type="image/x-icon" href="https://api.frostzzone.repl.co/the-very-original-image.ico"/>
-    </head>
+    <link rel="icon" href="./the-very-original-image">
+</head>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap');
-:root {
-    --black: #111;
-    --grey: #333;
-    --red: #ED4245;
-    --blue: #5865F2;
-    --yellow: #FEE75C;
-    --green: #57F287;
-    color-scheme: dark;
-}
+    @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-  
-body {
-  background-color: var(--black);
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-}
-  
-header {
-  background: rgb(88,101,242);
-  background: linear-gradient(180deg, rgba(88,101,242,1) 0%, #4934eb 100%);
-  margin: 5%;
-  box-shadow: 4px 5px #0f0f0f;
-  border-radius: 0.5em;
-}
-
-header h1 {
-  margin-top: -3em;
-  text-align: center;
-  font-size: 300%;
-  z-index: 10000;
-  text-shadow: 2px 2px 7px #121212;
-}
-
-header p {
-  text-align: center;
-  font-size: 150%;
-  font-weight: 600;
-  color: #d4d4d4;
-  text-shadow: 2px 2px 7px #121212;
-}
-  
-footer {
-  overflow: hidden;
-  background-color: var(--grey);
-}
-  
-header, footer {
-  min-height: 200px;
-  top: 0;
-  position: relative;
-}
-  
-img {
-  vertical-align: middle;
-}
-  
-header > * {
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
-}
-
-main {
-  margin-left: 5%;
-  margin-right: 5%;
-}
-  
-footer > * {
-  position: absolute;
-  margin: 10px;
-  top: 10px;
-  width: 100%;
-}
-  
-section > h1 {
-  margin-left: 20px;
-}
-  
-.subtext {
-  font-size: 12px;
-}
-  
-h1, h2, h3 {
-  font-family: 'Work Sans', sans-serif;
-  margin-bottom: 5px;
-}
-  
-.warning-bar {
-  margin: 10px;
-  background-color: var(--red);
-  padding: 10px;
-  border-radius: 0.25em;
-  text-decoration: none;
-}
-  
-*:not(.card) > a {
-  color: inherit;
-  text-decoration: none;
-  font-weight: bold;
-}
-  
-.cardlist {
-  display: flex;
-  flex-direction: row;
-  gap: 1em;
-/*   overflow-x: auto;
-  overflow-y: hidden; */
-  flex-wrap: wrap;
-  padding: 1em 0 1.5em 0;
-  animation: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0s 1 slideInFromBottom;
-}
-  
-@keyframes slideInFromBottom {
-    0% {
-        transform: translateY(50%);
-        filter: opacity(0);
+    :root {
+        --black: #111;
+        --grey: #333;
+        --red: #ED4245;
+        --blue: #5865F2;
+        --yellow: #FEE75C;
+        --green: #57F287;
+        color-scheme: dark;
     }
-    100% {
-        transform: translateY(0);
-        filter: opacity(1);
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
-}
+
+    body {
+        background-color: var(--black);
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    header {
+/*         background: rgb(88, 101, 242);
+        background: linear-gradient(180deg, rgba(88, 101, 242, 1) 0%, #4934eb 100%); */
+        background-size: cover;
+        background-image: url("images/banner.png");
+        background-repeat: no-repeat;
+        margin: 5%;
+        margin-bottom: 0;
+        box-shadow: 4px 5px #0f0f0f;
+        border-radius: 0.5em;
+    }
+
+    header h1 {
+        margin-top: -3em;
+        text-align: center;
+        font-size: 300%;
+        z-index: 10000;
+        text-shadow: 2px 2px 7px #121212;
+    }
+
+    header p {
+        text-align: center;
+        font-size: 150%;
+        font-weight: 600;
+        color: #d4d4d4;
+        text-shadow: 2px 2px 7px #121212;
+    }
+
+    footer {
+        overflow: hidden;
+        background-color: var(--grey);
+        margin-top: 3.5em;
+    }
+
+    header,
+    footer {
+        min-height: 200px;
+        top: 0;
+        position: relative;
+    }
+
+    img {
+        vertical-align: middle;
+    }
+
+    header>* {
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+    }
+
+    main {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    footer>* {
+        position: absolute;
+        margin: 10px;
+        top: 10px;
+        width: 100%;
+    }
+
+    section>h1 {
+        margin-left: 20px;
+    }
+
+    .subtext {
+        font-size: 12px;
+    }
   
-@keyframes cardDelete {
-    0% {
-        transform: translateY(0);
-        filter: opacity(1);
+
+    h1, h2, h3 {
+        font-family: 'Work Sans', sans-serif;
+        margin-bottom: 5px;
     }
-    50% {
-        transform: translateY(100%);
-        filter: opacity(0);
+
+    h2 {
+      padding-top: 3.5em;
+    }
+  
+    h3 {
+        font-size: 140%;
+    }
+
+    .warning-bar {
+        margin: 10px;
+        background-color: var(--red);
+        padding: 10px;
+        border-radius: 0.25em;
+        text-decoration: none;
+    }
+
+    *:not(.card)>a {
+        color: inherit;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .cardlist {
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+        flex-wrap: wrap;
+        padding-top: 1em;
+        animation: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0s 1 slideInFromBottom;
+    }
+
+    @keyframes slideInFromBottom {
+        0% {
+            transform: translateY(50%);
+            filter: opacity(0);
+        }
+
+        100% {
+            transform: translateY(0);
+            filter: opacity(1);
+        }
+    }
+
+    @keyframes cardDelete {
+        0% {
+            transform: translateY(0);
+            filter: opacity(1);
+        }
+
+        50% {
+            transform: translateY(100%);
+            filter: opacity(0);
+            width: 200px;
+        }
+
+        100% {
+            transform: translateY(100%);
+            filter: opacity(0);
+            width: 0px;
+        }
+    }
+
+    @keyframes rowDelete {
+        0% {
+            transform: translateX(0);
+            filter: opacity(1);
+        }
+
+        50% {
+            transform: translateX(-100%);
+            filter: opacity(0);
+        }
+
+        100% {
+            transform: translateX(-100%);
+            filter: opacity(0);
+        }
+    }
+
+    @keyframes cardAdd {
+        0% {
+            transform: translateY(100%);
+            filter: opacity(0);
+            width: 0px;
+        }
+
+        50% {
+            transform: translateY(100%);
+            filter: opacity(0);
+            width: 200px;
+        }
+
+        100% {
+            transform: translateY(0);
+            filter: opacity(1);
+        }
+    }
+
+    @keyframes shakeDeny {
+        0% {
+            transform: 0;
+            filter: brightness(1);
+        }
+
+        25% {
+            transform: translateX(-10px);
+            filter: brightness(0.8);
+        }
+
+        75% {
+            transform: translateX(10px);
+            filter: brightness(0.8);
+        }
+
+        100% {
+            filter: brightness(1);
+            transform: 0;
+        }
+    }
+
+    .card {
         width: 200px;
+        position: relative;
+        flex-shrink: 0;
+        height: 120px;
+        border-radius: 0.25em;
+        z-index: 1;
+        user-select: none;
+        transition: transform 0.2s, box-shadow 0.2s;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        background-position: 100% 0% !important;
+        overflow: hidden;
+        background-color: white;
     }
-    100% {
-        transform: translateY(100%);
-        filter: opacity(0);
-        width: 0px;
-    }
-}
-@keyframes rowDelete {
-    0% {
-        transform: translateX(0);
-        filter: opacity(1);
-    }
-    50% {
-        transform: translateX(-100%);
-        filter: opacity(0);
-    }
-    100% {
-        transform: translateX(-100%);
-        filter: opacity(0);
-    }
-}
-@keyframes cardAdd {
-    0% {
-        transform: translateY(100%);
-        filter: opacity(0);
-        width: 0px;
-    }
-    50% {
-        transform: translateY(100%);
-        filter: opacity(0);
-        width: 200px;
-    }
-    100% {
-        transform: translateY(0);
-        filter: opacity(1);
-    }
-}
-@keyframes shakeDeny {
-    0% {
-        transform: 0;
-        filter: brightness(1);
-    }
-    25% {
-        transform: translateX(-10px);
-        filter: brightness(0.8);
-    }
-    75% {
-        transform: translateX(10px);
-        filter: brightness(0.8);
-    }
-    100% {
-        filter: brightness(1);
-        transform: 0;
-    }
-}
-.card {
-    width: 200px;
-    position: relative;
-    flex-shrink: 0;
-    height: 100px;
-    border-radius: 0.25em;
-    z-index: 1;
-    user-select: none;
-    transition: transform 0.2s, box-shadow 0.2s;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-    background-position: 100% 0% !important;
-    overflow: hidden;
-    background-color: white;
-}
-.card:not([id]):not(.card-empty):not(.my-card) {
-    background: linear-gradient(90deg, #000 0%, #fff 100%);
-}
-.card::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    background: linear-gradient(0deg, #00000088 30%, #ffffff44 100%);
-    background-blend-mode: multiply;
-}
-.card:hover:not(.card-empty):not(.card-disabled) {
-    transform: scale(1.1);
-    z-index: 2;
-    box-shadow: 0 0 5px black;
-}
-.card a {
-    position: absolute;
-    height: 100%;
-    width: calc(100% - 10px);
-    color: inherit;
-    top: 0;
-    text-decoration: none;
-    overflow: hidden;
-    padding: 5px;
-    transition: transform 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-.card:not(.card-empty):not(.card-disabled) a:active {
-    transform: scale(0.9);
-    z-index: 2;
-}
-.card a * {
-    margin-top: 15px;
-}
-.card a h1 {
-    padding-top: 50px;
-    transition: padding 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-.card:hover:not(.card-empty) a h1 {
-    padding-top: 0px;
-}
-.card p {
-    font-size: 12px;
-}
-.card-empty {
-    border: 3px dashed white;
-    width: 194px;
-    background-color: transparent;
-    height: 94px;
-}
-.card-empty:before {
-    background: none;
-}
-/* my links */
-.my-card {
-    background-color: var(--blue);
-}
-#add-link {
-    transition: filter 0.2s;
-    cursor: pointer;
-}
-#add-link:hover {
-    filter: brightness(0.8)
-}
 
-@media only screen and (max-width: 454px) {
-  .card {
-    width: 100%;
-  }
-}
+    .card:not([id]):not(.card-empty):not(.my-card) {
+        text-shadow: 2px 2px 7px #121212;
+        background: rgb(167,93,56);
+background: linear-gradient(130deg, rgba(167,93,56,1) 0%, rgba(180,57,57,1) 100%);
+        box-shadow: 4px 5px #0f0f0f;
+    }
+
+    .card::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    .card:hover:not(.card-empty):not(.card-disabled) {
+        transform: scale(1.1);
+        z-index: 2;
+        box-shadow: 0 0 5px black;
+    }
+
+    .card a {
+        position: absolute;
+        height: 100%;
+        width: calc(100% - 10px);
+        color: inherit;
+        top: 0;
+        text-decoration: none;
+        overflow: hidden;
+        padding: 5px;
+        transition: transform 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    .card:not(.card-empty):not(.card-disabled) a:active {
+        transform: scale(0.9);
+        z-index: 2;
+    }
+
+    .card a * {
+        margin-top: 15px;
+    }
+
+    .card:hover:not(.card-empty) a h1 {
+        padding-top: 0px;
+    }
+
+    .card p {
+        font-size: 105%;
+        margin-top: -3px;
+    }
+
+    .card-empty {
+        border: 3px dashed white;
+        width: 194px;
+        background-color: transparent;
+        height: 94px;
+    }
+
+    .card-empty:before {
+        background: none;
+    }
+
+    /* my links */
+    .my-card {
+        background-color: var(--blue);
+    }
+
+    #add-link {
+        transition: filter 0.2s;
+        cursor: pointer;
+    }
+
+    #add-link:hover {
+        filter: brightness(0.8)
+    }
+
+    @media only screen and (max-width: 454px) {
+        .card {
+            width: 100%;
+        }
+    }
 </style>
+
 <body>
     <header>
         <div>
@@ -301,58 +342,109 @@ h1, h2, h3 {
         </div>
     </header>
 
-  <main>
-    <section time="1">
-        <h2>Current APIs</h2>
-        <div class="cardlist" id="workingOn">
-            <article class="card" time="0">
-                <a href="./png?url=https://api.frostzzone.repl.co/example.png">
-                    <h3>Image downloader</h3>
-                    <p>/png?url=image_url<div>Click for an example</div></p>
-                </a>
-            </article>
-          <article class="card" time="0">
-                <a href="./github/frostzzone">
-                    <h3>Github info</h3>
-                    <p>/github/user</p><div>Click for an example</div></p>
-                </a>
-            </article>
-            <article class="card card-empty card-disabled">
-                <a><h31>Coming soon</h3></a>
-            </article>
-        </div>
-    </section>
-    <section time="3">
-        <h2>Soon</h2>
-        <div class="cardlist" id="myProjects">
-            <article class="card card-disabled" time="1646948737220" style=""><a>
-    <h3>Something</h3>
-    <p>Stuff is comming soon</p>
-</a></article><article class="card card-empty card-disabled">
-                <a><h1>Coming soon</h1></a>
-            </article>
-        </div>
-    </section>
-  </main>
-    
+    <main>
+        <section time="1">
+          <h2>About PooPoo API</h2>
+          <p style="color: #d4d4d4; line-height: 1.25em">PooPoo API is a <strike>very bad</strike> Application Programming Interface ("API"). We are working hard to make your coding life easier by providing some pre-made codes that you can use in your Discord Bots, websites, etc. Some crediting would be nice, but not mandatory. Also, this is a non-profit and <a href="https://replit.com/@frostzzone/api2?v=1" target="_blank">open-sourced</a> project, so any supports will sure be greatly appreciated! <br><br> Thanks for taking a look. <strike>Do you agree that this API is bad?</strike></p>
+            </ul>
+        </section>
+        <section time="2">
+            <h2>Current APIs</h2>
+            <div class="cardlist" id="workingOn">
+                <article class="card" time="0" title="An API that can download images.">
+                    <a href="./png?url=https://api.frostzzone.repl.co/example.png">
+                        <h3>Image Downloader</h3>
+                        <p>/png?url=image_url</p>
+                    </a>
+                </article>
+                <article class="card" time="0" title="An API that can show information about a Github user.">
+                    <a href="./github/frostzzone">
+                        <h3>Github Info</h3>
+                        <p>/github/user</p>
+                    </a>
+                </article>
+                <article class="card" time="0" title="An API that can randomly generate a question (good for QOTD bots).">
+                    <a href="./qotd">
+                        <h3>QOTD</h3>
+                        <p>/qotd</p>
+                    </a>
+                </article>
+              <article class="card" time="0" title="An API that can randomly generate a password.">
+                    <a href="/password">
+                        <h3>Password Generator</h3>
+                        <p>/password</p>
+                    </a>
+                </article>
+              <article class="card" time="0" title="An API to encode text to binary">
+                    <a href="./encode?text=hi">
+                        <h3>Binary Encoder</h3>
+                        <p>/encode?text=text</p>
+                    </a>
+                </article>
+              <article class="card" time="0" title="An API to decode binary to text">
+                    <a href="./decode?binary=01101000 01101001">
+                        <h3>Binary Decoder</h3>
+                        <p>/decode?binary=binary</p>
+                    </a>
+              </article>
+              <article class="card" time="0" title="An API to make annoying spoilers">
+                    <a href="./spoil?text=hello">
+                        <h3>Annoying Discord Spoilers</h3>
+                        <p>/spoil?text=text</p>
+                    </a>
+              </article>
+              <article class="card" time="0" title="An API to remove stuff from text">
+                    <a href="./remove">
+                        <h3>Remove emojis/characters</h3>
+                        <p>go to <b>/remove </b> for more info</p>
+                    </a>
+              </article>
+                <article class="card card-empty card-disabled">
+                    <a>
+                        <h3>Coming soon</h3>
+                    </a>
+                </article>
+            </div>
+        </section>
+        <section time="3">
+            <h2>Frequently Asked Questions</h2>
+            <p>Coming soon</p>
+        </section>
+    </main>
+
     <footer>
         <div>
             <h1>Thanks for taking a look</h1>
             <p>Do you agree this api is bad</p>
-            <b style="color: #999">frostzzone 2022</b>
+            <b style="color: #999">PooPoo API Team (frostzzone, Eruption, Retro) 2022</b>
         </div>
     </footer>
 
-<style>.qc-cmp-showing { visibility: hidden !important; } body.didomi-popup-open { overflow: auto !important; } #didomi-host { visibility: hidden !important; }</style>
-<script type="text/javascript" defer>async function shakeAnim(ev) {
-    if (this.style.animation) return;
-    this.style.animation = 'shakeDeny 0.25s ease-in-out'
-    await new Promise(r => setTimeout(r, 250));
-    this.style.animation = '';
-}
-const cardElems = document.getElementsByClassName('card-disabled');
-for (var i = 0; i < cardElems.length; i++) {
-    cardElems[i].addEventListener('click', shakeAnim)
-}</script>
+    <style>
+        .qc-cmp-showing {
+            visibility: hidden !important;
+        }
+
+        body.didomi-popup-open {
+            overflow: auto !important;
+        }
+
+        #didomi-host {
+            visibility: hidden !important;
+        }
+    </style>
+    <script type="text/javascript" defer>
+        async function shakeAnim(ev) {
+            if (this.style.animation) return;
+            this.style.animation = 'shakeDeny 0.25s ease-in-out'
+            await new Promise(r => setTimeout(r, 250));
+            this.style.animation = '';
+        }
+        const cardElems = document.getElementsByClassName('card-disabled');
+        for (var i = 0; i < cardElems.length; i++) {
+            cardElems[i].addEventListener('click', shakeAnim)
+        }
+    </script>
 </body>
+
 </html>

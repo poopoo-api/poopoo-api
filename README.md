@@ -1,3 +1,4 @@
 REEEE
 
-run ```rs``` in console to restart
+run ```rs``` in console to restart manually
+I guess...

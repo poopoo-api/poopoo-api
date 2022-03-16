@@ -1,12 +1,16 @@
 /*console.clear();*/
 //this is a mess
+const generatePassword = require('./passwordgenerate.js')
 const express = require('express')
 const bodyParser = require('body-parser');
 const cors = require('cors');
 var path = require('path');
 var validUrl = require('valid-url');
 const Jimp = require('jimp')
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args))
+const fetch = (...args) => import('node-fetch').then(({
+    default: fetch
+}) => fetch(...args))
+const func = require("./files/functions.js")
 const Database = require('easy-json-database');
 const db = new Database("./db.json", {
     snapshots: {
@@ -15,6 +19,7 @@ const db = new Database("./db.json", {
         folder: './backups/'
     }
 });
+
 const app = express();
 const port = 8080;
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -32,7 +37,7 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 app.use(bodyParser.json());
-
+app.set('json spaces', 2)
 //main api
 app.get('/add', async function(req, res) {
     res.sendFile(path.join(__dirname, '/files/new-item.html'));
@@ -43,8 +48,8 @@ app.get('/', async function(req, res) {
 app.get('/example.png', async function(req, res) {
     res.sendFile(path.join(__dirname, '/files/images/png.png'))
 })
-app.get('/the-very-original-image.ico', async function(req, res) {
-    res.sendFile(path.join(__dirname, '/favicon.ico'))
+app.get('/the-very-original-image', async function(req, res) {
+    res.sendFile(path.join(__dirname, '/files/images/png.png'))
 })
 app.get('/png/last', async function(req, res) {
     res.sendFile(path.join(__dirname, '/files/images/yes.png'))
@@ -68,47 +73,33 @@ app.get('/png', async function(req, res) {
     }
 })
 
-app.get('/morse', async function(req,res){
-  let text = req.query.text;
-  res.send()
+app.get('/qotd', async function(req, res) {
+    const object = new Object();
+    object['question'] = func.question();
+    res.header("Content-Type", 'application/json');
+    res.send(JSON.stringify(object, null, 4));
 })
+
 app.get('/github/:name', async function(req, res) {
-  let user = req.params.name
-  const response = await fetch('https://api.github.com/users/'+user);
-  const data = await response.json();
-  const object = new Object();
-  object['url'] = data.url;
-  object['avatar'] = data.avatar_url;
-  object['account_type'] = data.type;
-  object['name'] = data.login;
-  if(data.company == null){object['company']="None"}else{object['company']=data.company;}
-  if(data.blog == null){object['blog']="None"}else{object['blog']=data.blog;}
-  if(data.location == null){object['location']="Not set"}else{object['location']=data.location;}
-  if(data.email == null){object['email']="None"}else{object['email']=data.email;}
-  if(data.bio == null){object['bio']="No Bio"}else{object['bio']=data.bio;}
-  if(data.twitter_username == null){object['twitter']="Not Set";} else {object['twitter']=data.twitter_username;}
-  object['public_repos']=data.public_repos;
-  object['public_gists']=data.public_gists;
-  object['followers']=data.followers;
-  object['following']=data.following;
-  object['created_at']=data.created_at;
-  object['updated_at']=data.updated_at;
-  res.header("Content-Type",'application/json');
-        res.send(JSON.stringify(object, null, 4));
+    let user = req.params.name
+    const response = await fetch('https://api.github.com/users/' + user);
+    const data = await response.json();
+    res.header("Content-Type", 'application/json');
+    res.send(JSON.stringify(func.git(data), null, 4));
 })
 
 app.post('/item', async function(req, res) {
     const body = req.body;
     const body2 = JSON.stringify(body)
     /*console.log(body);*/
-    if (body.key == "key" || body.key == "err") {
+    if (body.key == "key" || body.key == "Key" || body.key == "err" || body.key == "all" || body.key == "All") {
         err = "can't set key: " + body.key
         errr = true
         json = {
             err: true,
             error: err
         }
-      res.header("Content-Type",'application/json');
+        res.header("Content-Type", 'application/json');
         res.send(JSON.stringify(json, null, 4));
     } else {
         db.set(body.key, body.value);
@@ -117,7 +108,7 @@ app.post('/item', async function(req, res) {
             key: body.key,
             value: body.value
         }
-      res.header("Content-Type",'application/json');
+        res.header("Content-Type", 'application/json');
         res.send(JSON.stringify(json, null, 4));
     }
 })
@@ -125,7 +116,7 @@ app.get('/item', async function(req, res) {
     const body = req.query.key;
     if (body == "all") {
         json = db.all();
-      res.header("Content-Type",'application/json');
+        res.header("Content-Type", 'application/json');
         res.send(JSON.stringify(json, null, 4));
     } else {
         try {
@@ -137,14 +128,14 @@ app.get('/item', async function(req, res) {
                     json = {
                         value: db.get(String(body))
                     }
-                  res.header("Content-Type",'application/json');
-        res.send(JSON.stringify(json, null, 4));
+                    res.header("Content-Type", 'application/json');
+                    res.send(JSON.stringify(json, null, 4));
                 } else {
                     json = {
                         value: null
                     }
-                  res.header("Content-Type",'application/json');
-        res.send(JSON.stringify(json, null, 4));
+                    res.header("Content-Type", 'application/json');
+                    res.send(JSON.stringify(json, null, 4));
                 }
             }
         } catch (err) {
@@ -162,9 +153,88 @@ app.get('/item', async function(req, res) {
     }
 })
 
+app.get('/encode', async function(req, res) {
+    const text = req.query.text;
+    if (text !== undefined) {
+        const object = new Object();
+        object['binary'] = text.split('').map((char) => '00'.concat(char.charCodeAt(0).toString(2)).slice(-8)).join(' ')
+        res.header("Content-Type", 'application/json');
+        res.send(JSON.stringify(object, null, 4));
+    } else {
+        res.header("Content-Type", 'application/json');
+        res.send(JSON.stringify({
+            error: 'No text provided'
+        }, null, 4))
+    }
+})
+
+app.get('/decode', async function(req, res) {
+    const binary = req.query.binary;
+    if (binary !== undefined) {
+        var string = '';
+        binary.split(' ').map(function(bin) {
+            string += String.fromCharCode(parseInt(bin, 2));
+        });
+        const object = new Object();
+        object['text'] = string
+        res.header("Content-Type", 'application/json');
+        res.send(JSON.stringify(object, null, 4));
+    } else {
+        res.header("Content-Type", 'application/json');
+        res.send(JSON.stringify({
+            error: 'No binary provided'
+        }, null, 4))
+    }
+})
+
+app.get('/spoil', async function(req, res) {
+    let text = req.query.text;
+    if (text !== undefined) {
+        text = textReplace(text, '', '||||')
+        const object = new Object();
+        object['text'] = text.slice(2, text.length - 2);
+        res.header("Content-Type", 'application/json');
+        res.send(JSON.stringify(object, null, 4));
+    } else {
+        res.header("Content-Type", 'application/json');
+        res.send(JSON.stringify({
+            error: 'No text provided'
+        }, null, 4))
+    }
+})
+
+app.get('/remove', async function(req, res){
+  const text = req.query.text;
+  try {
+    const type = req.query.type;
+    await func.emoji(text, type, res, fetch);
+  } catch (error) {
+    const type = undefined;
+    await func.emoji(text, type, res, fetch);
+  }
+});
+
+app.get('/password', async (req, res) => {
+    var outcome = []
+    generatePassword.loopPassword(outcome)
+    var password = outcome.join('')
+    var recoverCode = []
+    generatePassword.loopRecover(recoverCode)
+    res.header("Content-Type", 'application/json');
+    res.send(JSON.stringify({
+        password: String(password),
+        recoverCode: String(recoverCode.join(''))
+    }, null, 4))
+})
+
 // 404 page
 app.get('*', async function(req, res) {
-    res.send('Error found')
+    res.sendFile(path.join(__dirname, '/files/404.html'))
 })
+
 //hosted app
-app.listen(port, () => console.log(`Listening on port ${port}`));
+try {
+  app.listen(port, () => console.log(`Listening on port ${port}`));
+} catch (error) {
+  app.listen(port, () => console.log(`Listening on port 8081`));
+}

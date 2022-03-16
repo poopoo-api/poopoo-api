@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "star": "nodemon index.js",
-    "start": "nodemon -x 'node index.js || touch index.js' --ignore package.json --ignore db.json --ignore new-item.html --ignore yes.png --ignore backups/ --ignore .config/"
+    "start": "nodemon -x 'node index.js || touch index.js' --ignore /"
   },
   "keywords": [],
   "author": "",
