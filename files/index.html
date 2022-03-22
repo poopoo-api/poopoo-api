@@ -7,9 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="PooPoo API 💩">
     <meta property="og:description" content="A very poopy api that you might use">
-    <meta property="og:image" content="the-very-original-image">
+    <meta property="og:image" content="example.png">
     <title>PooPoo API 💩</title>
-    <link rel="icon" href="./the-very-original-image">
+    <link rel="icon" href="./example.png">
+
+    <!-- Github buttons -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap');
@@ -36,31 +39,56 @@
         font-family: Arial, Helvetica, sans-serif;
     }
 
+    nav > ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style-type: none;
+      background-color: #080808;
+    }
+
+    .navigation-bar > li {
+      display: inline-block;
+      font-size: 125%;
+      padding: 1em;
+    }
+
+    .navigation-bar > li > a {
+      text-decoration: none;
+      font-weight: 780;
+      color: #c4c4c4 !important;
+    }
+
+    .navigation-bar > li > a:hover {
+      -webkit-background-clip: text;
+      transition: all 0.5s ease-in-out;
+      color: #78f4ff !important;
+
+
+    }
+  
     header {
-/*         background: rgb(88, 101, 242);
-        background: linear-gradient(180deg, rgba(88, 101, 242, 1) 0%, #4934eb 100%); */
         background-size: cover;
-        background-image: url("images/banner.png");
+        background-image: url("images/banner.gif");
         background-repeat: no-repeat;
-        margin: 5%;
+        height: 500px;
+        margin-bottom: 5%;
         margin-bottom: 0;
         box-shadow: 4px 5px #0f0f0f;
-        border-radius: 0.5em;
     }
 
     header h1 {
-        margin-top: -3em;
+        margin-top: -5em;
         text-align: center;
-        font-size: 300%;
+        font-size: 350%;
         z-index: 10000;
         text-shadow: 2px 2px 7px #121212;
     }
 
     header p {
         text-align: center;
-        font-size: 150%;
+        font-size: 200%;
         font-weight: 600;
-        color: #d4d4d4;
+        color: #e3e3e3;
         text-shadow: 2px 2px 7px #121212;
     }
 
@@ -91,7 +119,7 @@
         margin-left: 5%;
         margin-right: 5%;
     }
-
+  
     footer>* {
         position: absolute;
         margin: 10px;
@@ -114,25 +142,85 @@
     }
 
     h2 {
+      text-align: center;
       padding-top: 3.5em;
+      font-size: 220%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradient 5s ease-in-out infinite;
+      background-size: 400% 400%;
     }
   
     h3 {
         font-size: 140%;
     }
+  
+    main p {
+      font-size: 120%;
+      line-height: 1.25em;
+      color: #d4d4d4;
+    }
 
+    main a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+
+    main a:hover {
+        text-decoration: underline; 
+    }
+  
+    #about {
+      text-align: center;
+      margin-left: 18%;
+      margin-right: 18%;
+    }
+
+    #about img {
+      width: 30%;
+      border: 3.5px solid;
+      flex-wrap: wrap;
+      border-radius: 50%;
+    }
+
+    #about h2 {
+      background-image: linear-gradient(-45deg , #f56042, #f59342, #ffdf0f, #abff0f);
+    }
+  
+    .developers {
+      display: flex;
+      flex-wrap: wrap;
+      padding-bottom: 3.5em;
+    }
+
+    .developers > div {
+      padding: 1em 0 4.5em 0;
+      margin: 0.5em;
+      background-color: #292929;
+      border-radius: 0.5em;
+      width: 31%;
+    }
+
+    .developers > div:hover {
+      box-shadow: 5px 6px #1a1a1a;
+      transition: all 0.5s ease-in-out;
+    }
+
+    #faq {
+      margin: 1em -5%;
+      background-color: #141414;
+    }
+
+    #faq h2 {
+      background-image: linear-gradient(-45deg , #1900ff, #670af2, #8f02db, #db02d8);
+    }
+  
     .warning-bar {
         margin: 10px;
         background-color: var(--red);
         padding: 10px;
         border-radius: 0.25em;
         text-decoration: none;
-    }
-
-    *:not(.card)>a {
-        color: inherit;
-        text-decoration: none;
-        font-weight: bold;
     }
 
     .cardlist {
@@ -144,6 +232,19 @@
         animation: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0s 1 slideInFromBottom;
     }
 
+    @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+  
     @keyframes slideInFromBottom {
         0% {
             transform: translateY(50%);
@@ -327,29 +428,75 @@ background: linear-gradient(130deg, rgba(167,93,56,1) 0%, rgba(180,57,57,1) 100%
         filter: brightness(0.8)
     }
 
+
+    @media only screen and (max-width: 768px) {
+      #about {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .developers > div {
+        width: 45%;
+      }
+    }
+  
     @media only screen and (max-width: 454px) {
         .card {
             width: 100%;
+        }
+
+        .developers > div {
+          width: 100%;
         }
     }
 </style>
 
 <body>
+    <nav>
+        <ul class="navigation-bar">
+          <li><a href="https://api.frostzzone.repl.co/#about">About</a></li>
+          <li><a href="https://api.frostzzone.repl.co/#current-apis">Current APIs</a></li>
+          <li><a href="https://api.frostzzone.repl.co/#faq">FAQ</a></li>
+        </ul>
+      </nav>
     <header>
         <div>
             <h1>PooPoo API</h1>
-            <p>A very simple api that you might use ._.</p>
+            <p>A very simple api that you might use</p>
         </div>
     </header>
 
     <main>
-        <section time="1">
+        <section id="about">
           <h2>About PooPoo API</h2>
-          <p style="color: #d4d4d4; line-height: 1.25em">PooPoo API is a <strike>very bad</strike> Application Programming Interface ("API"). We are working hard to make your coding life easier by providing some pre-made codes that you can use in your Discord Bots, websites, etc. Some crediting would be nice, but not mandatory. Also, this is a non-profit and <a href="https://replit.com/@frostzzone/api2?v=1" target="_blank">open-sourced</a> project, so any supports will sure be greatly appreciated! <br><br> Thanks for taking a look. <strike>Do you agree that this API is bad?</strike></p>
-            </ul>
+          <p style="font-size: 125%">PooPoo API is an Application Programming Interface ("API") which makes your coding life easier by providing some pre-made codes that you can use in your Discord Bots, websites, etc. Some crediting would be nice, but not mandatory.<br><br>This is an open-sourced project, the Github Repository can be viewed <a href="https://github.com/frostzzone/poopoo-api" target="_blank">here</a>.</p>
+          <br>
+          <p><a class="github-button" href="https://github.com/frostzzone/poopoo-api" data-icon="octicon-star" data-show-count="true" aria-label="Star frostzzone/poopoo-api on GitHub">Star</a> <a class="github-button" href="https://github.com/frostzzone/poopoo-api/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork frostzzone/poopoo-api on GitHub">Fork</a> <a class="github-button" href="https://github.com/frostzzone/poopoo-api/issues" data-icon="octicon-issue-opened" data-show-count="true" aria-label="Issue frostzzone/poopoo-api on GitHub">Issue</a> <a class="github-button" href="https://github.com/frostzzone/poopoo-api/discussions" data-icon="octicon-comment-discussion" aria-label="Discuss frostzzone/poopoo-api on GitHub">Discuss</a></p>
+          <h2>Developers</h2>
+          <center><div class="developers">
+            <div>
+              <img src="images/frostzzone.png" alt="frostzzone's profile">
+              <h3>frostzzone#4486</h3>
+              <p>Lead Developer</p>
+            </div>
+            <div>
+              <img src="images/retro.png" alt="retro's profile">
+              <h3>Retro#2448</h3>
+              <p>API Developer</p>
+            </div>
+            <div>
+              <img src="images/eruption.png" alt="eruption's profile">
+              <h3>Eruption#8390</h3>
+              <p>Website Designer</p>
+            </div>
+          </div></center>
         </section>
-        <section time="2">
-            <h2>Current APIs</h2>
+      <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <p>Coming soon</p>
+        </section>
+        <section id="current-apis">
+            <h2 style="background-image: linear-gradient(90deg, rgba(56,74,255,1) 0%, rgba(196,0,255,1) 100%)">Current APIs</h2>
             <div class="cardlist" id="workingOn">
                 <article class="card" time="0" title="An API that can download images.">
                     <a href="./png?url=https://api.frostzzone.repl.co/example.png">
@@ -395,7 +542,7 @@ background: linear-gradient(130deg, rgba(167,93,56,1) 0%, rgba(180,57,57,1) 100%
               </article>
               <article class="card" time="0" title="An API to remove stuff from text">
                     <a href="./remove">
-                        <h3>Remove emojis/characters</h3>
+                        <h3>Remove Emojis/Characters</h3>
                         <p>go to <b>/remove </b> for more info</p>
                     </a>
               </article>
@@ -405,10 +552,6 @@ background: linear-gradient(130deg, rgba(167,93,56,1) 0%, rgba(180,57,57,1) 100%
                     </a>
                 </article>
             </div>
-        </section>
-        <section time="3">
-            <h2>Frequently Asked Questions</h2>
-            <p>Coming soon</p>
         </section>
     </main>
 
@@ -448,3 +591,4 @@ background: linear-gradient(130deg, rgba(167,93,56,1) 0%, rgba(180,57,57,1) 100%
 </body>
 
 </html>
+ 
