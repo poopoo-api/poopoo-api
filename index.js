@@ -38,18 +38,13 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 app.set('json spaces', 2)
+app.use('/images', express.static(path.join(__dirname, 'files/images')))
 //main api
 app.get('/add', async function(req, res) {
     res.sendFile(path.join(__dirname, '/files/new-item.html'));
 });
 app.get('/', async function(req, res) {
     res.sendFile(path.join(__dirname, '/files/index.html'));
-})
-app.get('/example.png', async function(req, res) {
-    res.sendFile(path.join(__dirname, '/files/images/png.png'))
-})
-app.get('/the-very-original-image', async function(req, res) {
-    res.sendFile(path.join(__dirname, '/files/images/png.png'))
 })
 app.get('/png/last', async function(req, res) {
     res.sendFile(path.join(__dirname, '/files/images/yes.png'))
