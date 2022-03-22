@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "star": "nodemon index.js",
-    "start": "nodemon -x 'node index.js || touch index.js' --ignore /"
+    "build": "netlify-lambda build express",
+    "start": "nodemon local.js"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +20,7 @@
     "node-fetch": "^3.2.2",
     "nodemon": "^2.0.15",
     "npm": "^8.5.4",
+    "serverless-http": "^2.7.0",
     "valid-url": "^1.0.9"
   }
 }
