@@ -23,3 +23,5 @@ Contribution of any kinds are appreciated, simply crediting the API when you use
 * Clone the project. Run `git clone https://github.com/frostzzone/poopoo-api`.
 * Run on node.js with express and nodemon (for anti crash).
 * Run `rs` in console to restart manually.
+
+~~The API is very bad that's why it's called PooPoo API~~
