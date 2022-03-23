@@ -47,19 +47,19 @@ app.get('/', async function(req, res) {
     res.sendFile(path.join(__dirname, '/files/index.html'));
 })
 app.get('/png/last', async function(req, res) {
-    res.sendFile(path.join(__dirname, '/files/images/yes.png'))
+    res.sendFile(path.join(__dirname, '/files/images/example.png'))
 })
 app.get('/png', async function(req, res) {
     let url = (req.query.url);
     if (url !== undefined) {
         if (validUrl.isUri(url)) {
             await Jimp.read(url).then(png => {
-                return png.write('./files/images/yes.png');
+                return png.write('./files/images/example.png');
             }).catch(err => {
                 console.error(err);
             });
             await delay(Number(1) * 100);
-            await res.sendFile(path.join(__dirname, 'files/images/yes.png'));
+            await res.sendFile(path.join(__dirname, 'files/images/example.png'));
         } else {
             res.send(`Url is invalid '${url}'`)
         }
