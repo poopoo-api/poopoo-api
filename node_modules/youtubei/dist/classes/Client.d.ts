@@ -1,0 +1,49 @@
+/// <reference types="node" />
+import { HTTP } from "../common";
+import { Playlist, Video, SearchResult, LiveVideo, Channel, MixPlaylist } from ".";
+import { SearchResultType } from "./SearchResult";
+import { RequestOptions } from "https";
+export declare namespace Client {
+    type SearchType = "video" | "channel" | "playlist" | "all";
+    type SearchOptions = {
+        /** Search type, can be `"video"`, `"channel"`, `"playlist"`, or `"all"` */
+        type?: SearchType;
+        /** Raw search params to be passed on the request, ignores `type` value if this is provided */
+        params?: string;
+    };
+    type ClientOptions = {
+        cookie: string;
+        /** Optional options for http client */
+        requestOptions: Partial<RequestOptions>;
+        /** Optional options passed when sending a request to youtube (context.client) */
+        youtubeClientOptions: Record<string, unknown>;
+        /** Use Node `https` module, set false to use `http` */
+        https: boolean;
+    };
+}
+/** Youtube Client */
+export default class Client {
+    /** @hidden */
+    http: HTTP;
+    constructor(options?: Partial<Client.ClientOptions>);
+    /**
+     * Searches for videos / playlists / channels
+     *
+     * @param query The search query
+     * @param searchOptions Search options
+     *
+     */
+    search<T extends Client.SearchOptions>(query: string, searchOptions?: T): Promise<SearchResult<T["type"]>>;
+    /**
+     * Search for videos / playlists / channels and returns the first result
+     *
+     * @return Can be {@link VideoCompact} | {@link PlaylistCompact} | {@link Channel} | `undefined`
+     */
+    findOne<T extends Client.SearchOptions>(query: string, searchOptions?: Partial<T>): Promise<SearchResultType<T["type"]> | undefined>;
+    /** Get playlist information and its videos by playlist id or URL */
+    getPlaylist<T extends Playlist | MixPlaylist | undefined>(playlistIdOrUrl: string): Promise<T>;
+    /** Get video information by video id or URL */
+    getVideo<T extends Video | LiveVideo | undefined>(videoIdOrUrl: string): Promise<T>;
+    /** Get channel information by channel id+ */
+    getChannel(channelId: string): Promise<Channel | undefined>;
+}

@@ -1,0 +1,33 @@
+import { YoutubeRawData } from "../common";
+import ChannelCompact, { ChannelCompactAttributes } from "./ChannelCompact";
+import PlaylistCompact from "./PlaylistCompact";
+import Thumbnails from "./Thumbnails";
+import VideoCompact from "./VideoCompact";
+interface Shelf {
+    title: string;
+    subtitle?: string;
+    items: ChannelCompact[] | VideoCompact[] | PlaylistCompact[];
+}
+/** @hidden */
+interface ChannelAttributes extends ChannelCompactAttributes {
+    banner: Thumbnails;
+    tvBanner: Thumbnails;
+    mobileBanner: Thumbnails;
+    shelves: Shelf[];
+}
+/**  Represents a Youtube Channel */
+export default class Channel extends ChannelCompact implements ChannelAttributes {
+    banner: Thumbnails;
+    mobileBanner: Thumbnails;
+    tvBanner: Thumbnails;
+    shelves: Shelf[];
+    /** @hidden */
+    constructor(channel?: Partial<ChannelAttributes>);
+    /**
+     * Load this instance with raw data from Youtube
+     *
+     * @hidden
+     */
+    load(data: YoutubeRawData): Channel;
+}
+export {};

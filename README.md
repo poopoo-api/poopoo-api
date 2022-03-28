@@ -5,7 +5,7 @@ PooPoo API is an Application Programming Interface ("API") which makes your codi
 * Developers: frostzzone#4485 (Lead Developer), Retro#2448 (API Developer), Eruption#8390 (Website Designer).
 * Website: https://api.frostzzone.repl.co/.
 * Package: https://www.npmjs.com/package/poopoo-api.
-* Discord Server: `Coming soon`.
+* Discord Server: https://discord.gg/MfEXDm5mr6.
 
 ## 🔎 Features
 More features will be added in the future!

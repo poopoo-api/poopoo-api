@@ -209,6 +209,25 @@ app.get('/remove', async function(req, res){
   }
 });
 
+app.get('/youtube', async function(req, res){
+  res.header("Content-Type", 'application/json');
+  res.send(JSON.stringify({types:[{"Get youtube channel info":'/youtube/channel?search=hello', "Get youtube video info": '/youtube/video?search=hello'}]}, null, 4))
+})
+app.get('/youtube/video', async function(req, res)
+	{
+    let search = req.query.search
+    let type = "video"
+    if (search == undefined || !search.length)return res.json({err:"search cant be blank"});
+	await func.yt(search, type, res)
+	})
+app.get('/youtube/channel', async function(req, res)
+	{
+    let search = req.query.search
+    let type = "channel"
+    if (search == undefined || !search.length)return res.json({err:"search cant be blank"});
+	await func.yt(search, type, res)
+	})
+
 app.get('/password', async (req, res) => {
     var outcome = []
     generatePassword.loopPassword(outcome)

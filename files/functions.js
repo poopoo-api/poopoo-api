@@ -107,5 +107,6 @@ const emoji = async function(text, type, res, fetch){
 module.exports = {
     question: question,
   git: git,
-  emoji: emoji
+  emoji: emoji,
+  yt: require('./youtube.js')
 };

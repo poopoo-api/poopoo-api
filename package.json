@@ -20,6 +20,7 @@
     "node-fetch": "^3.2.2",
     "nodemon": "^2.0.15",
     "npm": "^8.5.4",
-    "valid-url": "^1.0.9"
+    "valid-url": "^1.0.9",
+    "youtubei": "^0.0.1-rc.32"
   }
 }
