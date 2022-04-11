@@ -1,0 +1,165 @@
+ @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap');
+
+:root {
+  --black: #111;
+  --grey: #333;
+  --red: #ED4245;
+  --blue: #5865F2;
+  --yellow: #FEE75C;
+  --green: #57F287;
+  color-scheme: dark;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--black);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nav > ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  background-color: #080808;
+}
+
+.navigation-bar > li {
+  display: inline-block;
+  font-size: 125%;
+  padding: 1em;
+}
+
+.navigation-bar > li > a {
+  text-decoration: none;
+  font-weight: 780;
+  color: #c4c4c4 !important;
+}
+
+.navigation-bar > li > a:hover {
+  -webkit-background-clip: text;
+  transition: all 0.5s ease-in-out;
+  color: #78f4ff !important;
+
+
+}
+
+header {
+  background-size: cover;
+  background-image: url("images/banner.gif");
+  background-repeat: no-repeat;
+  height: 500px;
+  margin-bottom: 5%;
+  margin-bottom: 0;
+  box-shadow: 4px 5px #0f0f0f;
+}
+
+header h1 {
+  margin-top: -5em;
+  text-align: center;
+  font-size: 350%;
+  z-index: 10000;
+  text-shadow: 2px 2px 7px #121212;
+}
+
+header p {
+  text-align: center;
+  font-size: 200%;
+  font-weight: 600;
+  color: #e3e3e3;
+  text-shadow: 2px 2px 7px #121212;
+}
+
+footer {
+  overflow: hidden;
+  background-color: #0d0d0d;
+  margin-top: 3.5em;
+}
+
+header, footer {
+  min-height: 200px;
+  top: 0;
+  position: relative;
+}
+
+img {
+  vertical-align: middle;
+}
+
+header>* {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+
+main {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+footer > * {
+  position: absolute;
+  margin: 10px;
+  top: 10px;
+  width: 100%;
+}
+
+section > h1 {
+  margin-left: 20px;
+}
+
+.subtext {
+  font-size: 12px;
+}
+
+
+h1, h2, h3 {
+  font-family: 'Work Sans', sans-serif;
+  margin-bottom: 5px;
+}
+
+h2 {
+  text-align: center;
+  padding-top: 3.5em;
+  font-size: 220%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient 5s ease-in-out infinite;
+  background-size: 400% 400%;
+}
+
+h3 {
+  font-size: 140%;
+}
+
+main p {
+  font-size: 120%;
+  line-height: 1.25em;
+  color: #d4d4d4;
+}
+
+main a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+main a:hover {
+  text-decoration: underline; 
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

@@ -1,6 +1,5 @@
 /*console.clear();*/
-//this is a mess
-const generatePassword = require('./passwordgenerate.js')
+const generatePassword = require('./files/api/passwordgenerate.js')
 const express = require('express')
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -10,7 +9,7 @@ const Jimp = require('jimp')
 const fetch = (...args) => import('node-fetch').then(({
     default: fetch
 }) => fetch(...args))
-const func = require("./files/functions.js")
+const func = require("./files/api/functions.js")
 const Database = require('easy-json-database');
 const db = new Database("./db.json", {
     snapshots: {
@@ -44,7 +43,10 @@ app.get('/add', async function(req, res) {
     res.sendFile(path.join(__dirname, '/files/new-item.html'));
 });
 app.get('/', async function(req, res) {
-    res.sendFile(path.join(__dirname, '/files/index.html'));
+  res.sendFile(path.join(__dirname, '/files/index.html'));
+})
+app.get('/styles.css', async function(req, res) {
+  res.sendFile(path.join(__dirname, '/files/styles.css'));
 })
 app.get('/png/last', async function(req, res) {
     res.sendFile(path.join(__dirname, '/files/images/example.png'))
@@ -239,6 +241,11 @@ app.get('/password', async (req, res) => {
         password: String(password),
         recoverCode: String(recoverCode.join(''))
     }, null, 4))
+})
+
+// api
+app.get('/api', async function(req, res) {
+    res.sendFile(path.join(__dirname, '/files/api.html'))
 })
 
 // 404 page
