@@ -1,26 +1,25 @@
 {
-  "name": "api",
-  "version": "1.0.0",
-  "description": "a",
-  "main": "index.js",
+  "name": "next12",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "star": "nodemon index.js",
-    "start": "nodemon -x 'node index.js || touch index.js' --ignore /"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.19.2",
-    "cors": "^2.8.5",
-    "easy-json-database": "^1.5.0",
-    "express": "^4.17.3",
-    "jimp": "^0.16.1",
-    "node-fetch": "^3.2.2",
-    "nodemon": "^2.0.15",
-    "npm": "^8.5.4",
+    "fs": "^0.0.1-security",
+    "next": "12.1.0",
+    "node-fetch": "^3.2.3",
+    "path": "^0.12.7",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
     "valid-url": "^1.0.9",
-    "youtubei": "^0.0.1-rc.32"
+    "youtubei": "^0.0.1-rc.35"
+  },
+  "devDependencies": {
+    "eslint": "7",
+    "eslint-config-next": "12.0.1"
   }
 }

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="./images/example.png">
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+
+  <!-- Embed -->
+  <meta name="og:title" content="PooPoo API 💩">
+  <meta name="og:description" content="A very simple (but bad) API that you might use">
+  <meta name="og:image" content="./images/example.png">
+  <meta name="theme-color" content="#f56642" />
+  <title>PooPoo API</title>
+
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  <style>
+    #about {
+      text-align: center;
+      margin-left: 18%;
+      margin-right: 18%;
+    }
+
+    #about img {
+      width: 30%;
+      border: 3.5px solid;
+      flex-wrap: wrap;
+      border-radius: 50%;
+    }
+
+    #about h2 {
+      background-image: linear-gradient(-45deg , #f56042, #f59342, #ffdf0f, #abff0f);
+    }
+  
+    .developers {
+      display: flex;
+      flex-wrap: wrap;
+      padding-bottom: 3.5em;
+    }
+
+    .developers > div {
+      padding: 1em 0 4.5em 0;
+      margin: 0.5em;
+      background-color: #292929;
+      border-radius: 0.5em;
+      width: 31%;
+    }
+
+    .developers > div:hover {
+      box-shadow: 5px 6px #1a1a1a;
+      transition: all 0.5s ease-in-out;
+    }
+
+    #faq {
+      margin: 1em -5%;
+      background-color: #141414;
+    }
+
+    #faq h2 {
+      background-image: linear-gradient(-45deg , #1900ff, #670af2, #8f02db, #db02d8);
+    }
+
+    .questions-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding-bottom: 3.5em;
+}
+
+    .question {
+      background-color: #292929;
+      border-radius: 0.5em;    }
+
+    .question:hover {
+      box-shadow: 5px 6px #1a1a1a;
+      transition: all 0.5s ease-in-out;
+    }
+  
+    .question button{
+      width: 100%;
+      background-color: transparent;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 15px;
+      outline: none;
+      font-size: 22px;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      margin-top: 0.5em;
+    }
+
+    .question h3 {
+      font-size: 110%;
+      color: white;
+    }
+  
+    .question p {
+        max-height: 0;
+        opacity: 0;
+        line-height: 1.5;
+        overflow: auto;
+        transition: all 0.6s ease;
+    }
+    
+    /* Add this class when click */
+    .question p.show {
+        max-height: 200px; 
+        opacity: 1;
+        padding:0px 15px 30px 15px;
+    }
+
+    @media only screen and (max-width: 850px) {
+      #about {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .developers > div {
+        width: 45%;
+      }
+    }
+  
+    @media only screen and (max-width: 454px) {
+        .card {
+            width: 100%;
+        }
+
+        .developers > div {
+          width: 100%;
+        }
+    }
+</style>
+</head>
+
+<body>
+    <nav>
+        <ul class="navigation-bar">
+          <li><a href="#about">About</a></li>
+          <li><a href="/api">Current APIs</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+    <header>
+        <div>
+            <h1>PooPoo API</h1>
+            <p>A very simple api that you might use</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="about">
+          <h2>About PooPoo API</h2>
+          <p style="font-size: 125%">PooPoo API is an Application Programming Interface ("API") which makes your coding life easier by providing some pre-made codes that you can use in your Discord Bots, websites, etc. Some crediting would be nice, but not mandatory.<br><br>This is an open-sourced project, the Github Repository can be viewed <a href="https://github.com/frostzzone/poopoo-api" target="_blank">here</a>.</p>
+          <br>
+          <p><a class="github-button" href="https://github.com/frostzzone/poopoo-api" data-icon="octicon-star" data-show-count="true" aria-label="Star frostzzone/poopoo-api on GitHub">Star</a> <a class="github-button" href="https://github.com/frostzzone/poopoo-api/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork frostzzone/poopoo-api on GitHub">Fork</a> <a class="github-button" href="https://github.com/frostzzone/poopoo-api/issues" data-icon="octicon-issue-opened" data-show-count="true" aria-label="Issue frostzzone/poopoo-api on GitHub">Issue</a></p>
+          <h2>Developers</h2>
+          <center><div class="developers">
+            <div>
+              <img src="images/frostzzone.png" alt="frostzzone's profile">
+              <h3>frostzzone#4486</h3>
+              <p>Lead Developer</p>
+            </div>
+            <div>
+              <img src="images/retro.png" alt="retro's profile">
+              <h3>Retro#2448</h3>
+              <p>API Developer</p>
+            </div>
+            <div>
+              <img src="images/eruption.png" alt="eruption's profile">
+              <h3>Eruption#8390</h3>
+              <p>Website Designer</p>
+            </div>
+          </div></center>
+        </section>
+      <section>
+          <h2 style="background-color: white">Check the current APIs <a style="text-decoration: underline !important" href="https://api.frostzzone.repl.co/api">here</a></p>
+      </section>
+      <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="title-text">
+        </div>
+  <div class="questions-container">
+        <div class="question">
+            <button><h3>What is an API?</h3></button>
+            <p>API is the acronym for Application Programming Interface, which is a software intermediary that allows two applications to talk to each other.</p>
+        </div>
+        <div class="question">
+            <button><h3>What's the reason behind the name "PooPoo API"?</h3></button>
+            <p>Because it's bad. Don't you agree? 💩</p>
+        </div>
+        <div class="question">
+            <button><h3>Did you guys make any money out of this?</h3></button>
+            <p>No, we don't because this is a non-profit and also an open-sourced project. Meaning anyone can contribute!</p>
+        </div>
+        <div class="question">
+            <button><h3>How do I contribute to the project?</h3></button>
+            <p>Go to PooPoo API's <a href="https://github.com/frostzzone/poopoo-api">Github Repository</a> and fork it. After that, follow the instructions listed in the <code>README.md</code> file. To submit your contributions, create a pull request.</p>
+        </div>
+        <div class="question">
+            <button><h3>What are the current features?</h3></button>
+            <p>
+              &#8226; Image Downloader: An API that can download images.<br>
+              &#8226; Github Info: An API that can fetch a Github's user info.<br>
+              &#8226; Youtube search: An API that can search for channels and videos on youtube.<br>
+              &#8226; Password Generator: An API that can generate a random and unique password.<br>
+              &#8226; QOTD: An API that can generate random questions everytime you refresh the page.<br>
+              &#8226; Binary Encoder: An API to encode a text to binary.<br>
+              &#8226; Binary Decoder: An API to decode binary to text.<br>
+              &#8226; Annoying Discord Spoilers: An API to make annoying Discord Spoilers.<br>
+              &#8226; Remove Emojis/Characters: An API to remove stuff from texts.</p>
+        </div>
+    </div>
+    </main>
+
+    <footer>
+        <div>
+            <h1>Thanks for taking a look</h1>
+            <p>Do you agree this api is bad</p>
+            <b style="color: #999">PooPoo API Team (frostzzone, Eruption, Retro) 2022</b>
+        </div>
+    </footer>
+
+    <style>
+        .qc-cmp-showing {
+            visibility: hidden !important;
+        }
+
+        body.didomi-popup-open {
+            overflow: auto !important;
+        }
+
+        #didomi-host {
+            visibility: hidden !important;
+        }
+    </style>
+    <script type="text/javascript" defer>
+        // FAQ
+        var navLinks = document.getElementById("navLinks")
+
+        function showMenu(){
+          navLinks.style.right = "0";
+        
+        }
+        function hideMenu(){
+          navLinks.style.right = "-200px";
+        
+        }
+        
+        const buttons = document.querySelectorAll('button');
+        
+        buttons.forEach( button =>{
+            button.addEventListener('click',()=>{
+                const faq = button.nextElementSibling;
+        
+                faq.classList.toggle('show');
+            })
+        } )
+    </script>
+</body>
+
+</html>

@@ -11,7 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const _1 = require(".");
 const common_1 = require("../common");
-/** Represents a Compact Playlist (e.g. from search result, upNext / related of a video) */
+/** Represents a Compact Playlist (e.g. from search result, related of a video) */
 class PlaylistCompact extends _1.Base {
     /** @hidden */
     constructor(playlist = {}) {

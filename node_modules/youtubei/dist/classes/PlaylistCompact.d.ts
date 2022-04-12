@@ -7,7 +7,7 @@ interface PlaylistCompactAttributes extends BaseAttributes {
     channel?: ChannelCompact;
     videoCount: number;
 }
-/** Represents a Compact Playlist (e.g. from search result, upNext / related of a video) */
+/** Represents a Compact Playlist (e.g. from search result, related of a video) */
 export default class PlaylistCompact extends Base implements PlaylistCompactAttributes {
     /** The playlist's title */
     title: string;
