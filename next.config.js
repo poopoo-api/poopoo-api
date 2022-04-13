@@ -8,11 +8,7 @@ module.exports = {
       {
         source: "/api",
         destination: "/api.html"
-      },
-      {
-        source: "/(.*)",
-        destination: "/404.html"
-      },
+      }
     ];
   },
 };
