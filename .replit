@@ -1,2 +1,2 @@
 run = 'npm run dev'
-entrypoint = 'pages/index.jsx'
+entrypoint = 'README.md'
