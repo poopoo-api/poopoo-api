@@ -12,7 +12,7 @@ function isValidUrl(string) {
 
 export default async function handler(req, res) {
   let url = req.query.url
-  if(isValidUrl(url) !== true || url.includes("<" || ">" || "<script>" || "</script>") || encodeURIComponent(url).includes("%3C" || "%3E" || "%20")) return res.status(200).setHeader('Content-Type', 'application/json').end({"error": "provide a valid url"});
+  if(isValidUrl(url) !== true || url.includes("<" || ">" || "<script>" || "</script>") || encodeURIComponent(url).includes("%3C" || "%3E" || "%20")) return res.status(200).setHeader('Content-Type', 'application/json').send(JSON.stringify({error: "provide valid url", example: "/image?url=https://google.com"}, null, 4));
   const browser = await chromium.puppeteer.launch({
     executablePath: await chromium.executablePath,
     args: chromium.args,

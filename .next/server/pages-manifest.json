@@ -1,8 +1,6 @@
 {
   "/_app": "pages/_app.js",
-  "/_error": "pages/404.html",
+  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/api/password": "pages/api/password.js",
-  "/api/qotd": "pages/api/qotd.js",
-  "/api/github": "pages/api/github.js"
+  "/api/image": "pages/api/image.js"
 }
