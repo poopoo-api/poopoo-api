@@ -1,8 +1,4 @@
 import chromium from 'chrome-aws-lambda';
-import fs from 'fs'
-import path from 'path'
-
-const filePath = path.resolve('.', '/screenshot.png')
 
 function isValidUrl(string) {
     try {
@@ -27,15 +23,15 @@ export default async function handler(req, res) {
   await page.goto(url, {waitUntil: [
     'networkidle0', 'domcontentloaded', 'load'
   ]});
-  await page.screenshot({
-    path: filePath,
-    fullPage: true
+  const image = await page.screenshot({
+    type: 'png
   });
 
   await browser.close();
 
-  const imageBuffer = fs.readFileSync(filePath)
+  var img = await Buffer.from(image, 'base64');
 
-  res.setHeader('Content-Type', 'image/png')
-  res.send(imageBuffer)
+  res.status(200)
+    res.setHeader('Content-Type', 'image/png')
+res.send(img);
 }
