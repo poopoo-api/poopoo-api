@@ -11,7 +11,7 @@ module.exports = {
       },
       {
         source: "/(.*)",
-        destination: "/404.html"
+        destination: "/err.html"
       },
     ];
   },
