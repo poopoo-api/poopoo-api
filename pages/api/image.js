@@ -16,7 +16,8 @@ export default async function handler(req, res) {
   const browser = await chromium.puppeteer.launch({
     executablePath: await chromium.executablePath,
     args: chromium.args,
-    headless: chromium.headless
+    headless: chromium.headless,
+    defaultViewport: null
   });
 
   const page = await browser.newPage();
