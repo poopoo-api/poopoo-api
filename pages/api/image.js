@@ -24,7 +24,7 @@ export default async function handler(req, res) {
     'networkidle0', 'domcontentloaded', 'load'
   ]});
   const image = await page.screenshot({
-    type: 'png
+    type: 'png'
   });
 
   await browser.close();
