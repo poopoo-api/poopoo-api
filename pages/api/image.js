@@ -21,7 +21,7 @@ export default async function handler(req, res) {
 
   const page = await browser.newPage();
   await page.goto(url, {waitUntil: [
-    'networkidle0', 'domcontentloaded', 'load'
+    'domcontentloaded', 'load'
   ]});
   const image = await page.screenshot({
     type: 'png'
