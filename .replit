@@ -1,2 +1,2 @@
-run = 'npm run dev'
+run = 'yarn run dev'
 entrypoint = 'README.md'

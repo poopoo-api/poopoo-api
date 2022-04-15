@@ -9,7 +9,11 @@ PooPoo API is an Application Programming Interface ("API") which makes your codi
 
 ## 🔎 Features
 More features will be added in the future!
-* Image Downloader: An API that can download images.
+* Website Screenshoter: An API that can screenshot websites.
+* Color Inverter: An API to invert the color of images
+* Grayscale Image: An API to grayscale images
+* Pixelate Image: An API to pxelate images
+* Roman Numeral Converter: An API to convert roman numerals to numbers and numbers to roman numerals
 * Github Info: An API that can fetch a Github's user info.
 * Password Generator: An API that can generate a random and **unique** password.
 * QOTD: An API that can generate random questions everytime you refresh the page.
@@ -20,8 +24,10 @@ More features will be added in the future!
 
 ## 🔨 Contributions
 Contribution of any kinds are appreciated, simply crediting the API when you use it would work, or you can go further to report bugs, open issues, add more features through pull requests, etc. To get started:
+<!-- Changed setup instructions -->
 * Clone the project. Run `git clone https://github.com/frostzzone/poopoo-api`.
-* Run on node.js with express and nodemon (for anti crash).
-* Run `rs` in console to restart manually.
+* Run on node.js
+* Type `yarn install` in the console/shell (wait for it to finish)
+* Run `yarn run dev` in the console
 
 ~~The API is very bad that's why it's called PooPoo API~~

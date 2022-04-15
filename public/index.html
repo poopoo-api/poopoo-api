@@ -55,9 +55,23 @@
       transition: all 0.5s ease-in-out;
     }
 
+    #api {
+      background-size: cover;
+      background-image: url("images/banner2.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      margin: 0 -8em;
+      text-align: center;
+    }
+
+    /*#api h2 {
+      color: white;
+      text-align: center;
+    }*/
+    
     #faq {
-      margin: 1em -5%;
-      background-color: #141414;
+      padding: 1em -5%;
     }
 
     #faq h2 {
@@ -72,7 +86,8 @@
 
     .question {
       background-color: #292929;
-      border-radius: 0.5em;    }
+      border-radius: 0.5em;
+    }
 
     .question:hover {
       box-shadow: 5px 6px #1a1a1a;
@@ -100,11 +115,12 @@
     }
   
     .question p {
-        max-height: 0;
-        opacity: 0;
-        line-height: 1.5;
-        overflow: auto;
-        transition: all 0.6s ease;
+      max-height: 0;
+      opacity: 0;
+      line-height: 1.5;
+      overflow: auto;
+      transition: all 0.6s ease;
+      overflow: hidden;
     }
     
     /* Add this class when click */
@@ -177,8 +193,9 @@
             </div>
           </div></center>
         </section>
-      <section>
-          <h2 style="background-color: white">Check the current APIs <a style="text-decoration: underline !important" href="https://api.frostzzone.repl.co/api">here</a></p>
+      <section id="api">
+        <h2>Current APIs</h2>
+        <h1><a href="/api">Check out the current stuff here</a></h1>
       </section>
       <section id="faq">
             <h2>Frequently Asked Questions</h2>
@@ -201,20 +218,8 @@
             <button><h3>How do I contribute to the project?</h3></button>
             <p>Go to PooPoo API's <a href="https://github.com/frostzzone/poopoo-api">Github Repository</a> and fork it. After that, follow the instructions listed in the <code>README.md</code> file. To submit your contributions, create a pull request.</p>
         </div>
-        <div class="question">
-            <button><h3>What are the current features?</h3></button>
-            <p>
-              &#8226; Image Downloader: An API that can download images.<br>
-              &#8226; Github Info: An API that can fetch a Github's user info.<br>
-              &#8226; Youtube search: An API that can search for channels and videos on youtube.<br>
-              &#8226; Password Generator: An API that can generate a random and unique password.<br>
-              &#8226; QOTD: An API that can generate random questions everytime you refresh the page.<br>
-              &#8226; Binary Encoder: An API to encode a text to binary.<br>
-              &#8226; Binary Decoder: An API to decode binary to text.<br>
-              &#8226; Annoying Discord Spoilers: An API to make annoying Discord Spoilers.<br>
-              &#8226; Remove Emojis/Characters: An API to remove stuff from texts.</p>
-        </div>
     </div>
+      </section>
     </main>
 
     <footer>
@@ -224,20 +229,6 @@
             <b style="color: #999">PooPoo API Team (frostzzone, Eruption, Retro) 2022</b>
         </div>
     </footer>
-
-    <style>
-        .qc-cmp-showing {
-            visibility: hidden !important;
-        }
-
-        body.didomi-popup-open {
-            overflow: auto !important;
-        }
-
-        #didomi-host {
-            visibility: hidden !important;
-        }
-    </style>
     <script type="text/javascript" defer>
         // FAQ
         var navLinks = document.getElementById("navLinks")
