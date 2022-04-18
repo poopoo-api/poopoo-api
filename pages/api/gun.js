@@ -17,7 +17,7 @@ export default async (req, res) => {
 new Jimp(984, 984, '#FFFFFF', (err, img) => {
 Jimp.read(url, (err, fir_img) => {
   if (err) return res.setHeader('Content-Type',  'application/json').send(JSON.stringify({error: "Make sure the url is an image"}, null, 4));
-  Jimp.read('imagesave/gun.png', (err, sec_img) => {
+  Jimp.read('https://poopoo-api.vercel.app/images/gun.png', (err, sec_img) => {
     fir_img.resize(984, 984)
     sec_img.resize(sec_img.bitmap.width/1.5, sec_img.bitmap.height/1.5)
     img.blit(fir_img, 0, 0)
