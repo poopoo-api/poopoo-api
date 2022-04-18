@@ -46,6 +46,7 @@ nav > ul {
 .navigation-bar > li > a {
   text-decoration: none;
   font-weight: 780;
+  transition: all 0.5s ease-in-out;
   color: #c4c4c4 !important;
 }
 
@@ -55,11 +56,20 @@ nav > ul {
   color: #78f4ff !important;
 }
 
+.filter-svg-nav {
+  transition: all 0.5s ease-in-out;
+  filter: invert(60%) sepia(91%) saturate(4242%) hue-rotate(215deg) brightness(99%) contrast(103%);
+}
+
+.filter-svg-nav:hover {
+  transition: all 0.5s ease-in-out;
+  filter: invert(80%) sepia(15%) saturate(1132%) hue-rotate(142deg) brightness(104%) contrast(102%);
+}
+
 header {
   background-size: cover;
   background-image: url("images/banner.gif");
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-position: center;
   height: 500px;
   margin-bottom: 5%;

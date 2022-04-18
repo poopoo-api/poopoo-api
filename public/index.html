@@ -59,16 +59,24 @@
       background-size: cover;
       background-image: url("images/banner2.jpg");
       background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-position: center;
-      margin: 0 -8em;
       text-align: center;
+      margin: 0 -5.4%;
+      display: flex;
+      justify-content: space-around;
     }
 
-    /*#api h2 {
+    #api h2 {
       color: white;
       text-align: center;
-    }*/
+      -webkit-background-clip: border-box;
+      -webkit-text-fill-color: initial;
+    }
+
+    #api p {
+/*       padding-bottom: 3.5em; */
+      font-size: 125%;
+      font-weight: bold;
+    }
     
     #faq {
       padding: 1em -5%;
@@ -130,7 +138,18 @@
         padding:0px 15px 30px 15px;
     }
 
-    @media only screen and (max-width: 850px) {
+    @media only screen and (min-width: 1336px) {
+      header {
+        background-attachment: fixed;
+      }
+
+      #api {
+        background-attachment: fixed;
+        background-position: center;
+      }
+    }
+    
+    @media only screen and (max-width: 850px) {      
       #about {
         margin-left: 0;
         margin-right: 0;
@@ -159,6 +178,9 @@
           <li><a href="#about">About</a></li>
           <li><a href="/api">Current APIs</a></li>
           <li><a href="#faq">FAQ</a></li>
+          <li style="float: right"><a href="https://discord.gg/MfEXDm5mr6"><svg height="32" width="118" class="filter-svg-nav" >
+     <image xlink:href="images/discord.svg" src="images/discord.png" height="32"/>    
+</svg></a></li>
         </ul>
       </nav>
     <header>
@@ -194,13 +216,18 @@
           </div></center>
         </section>
       <section id="api">
-        <h2>Current APIs</h2>
-        <h1><a href="/api">Check out the current stuff here</a></h1>
+        <div>
+          <h2>Current APIs</h2>
+          <p><a href="/api">Check out the current stuff here</a></p>
+        </div>
+        <div>
+          <h2>Join Discord:</h2>
+        <iframe src="https://discord.com/widget?id=958019432721055765&theme=dark" style="border-radius: 0.5em" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        </div>
       </section>
       <section id="faq">
             <h2>Frequently Asked Questions</h2>
             <div class="title-text">
-        </div>
   <div class="questions-container">
         <div class="question">
             <button><h3>What is an API?</h3></button>
@@ -208,7 +235,7 @@
         </div>
         <div class="question">
             <button><h3>What's the reason behind the name "PooPoo API"?</h3></button>
-            <p>Because it's bad. Don't you agree? 💩</p>
+            <p>This was originally going to be a bad api 💩, but it progressed into a good api<img src="images/why_poopoo.jpg" height="70"/></p>
         </div>
         <div class="question">
             <button><h3>Did you guys make any money out of this?</h3></button>

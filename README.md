@@ -13,6 +13,7 @@ More features will be added in the future!
 * Color Inverter: An API to invert the color of images
 * Grayscale Image: An API to grayscale images
 * Pixelate Image: An API to pxelate images
+* Gun adder: An API to add a gun to images
 * Roman Numeral Converter: An API to convert roman numerals to numbers and numbers to roman numerals
 * Github Info: An API that can fetch a Github's user info.
 * Password Generator: An API that can generate a random and **unique** password.
