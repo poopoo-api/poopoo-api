@@ -15,7 +15,7 @@ export default async (req, res) => {
   if((text==null) || (text==undefined)) return res.status(200).setHeader('Content-Type', 'application/json').send(JSON.stringify({error: "provide some text", example: "/pikachu?text=macncheese"}, null, 4));
   
   Jimp.read('https://poopoo-api.vercel.app/images/pikachu.png', (err, pika) => {
-    Jimp.loadFont(Jimp.FONT_SANS_128_BLACK).then(font => {
+    Jimp.loadFont('https://poopoo-api.vercel.app/fonts/font.fnt').then(font => {
       pika.print(font, 20, 10, {
                                 text: text,
                             }, pika.bitmap.width, pika.bitmap.height);
