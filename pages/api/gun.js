@@ -22,6 +22,7 @@ Jimp.read(url, (err, fir_img) => {
     sec_img.resize(sec_img.bitmap.width/1.5, sec_img.bitmap.height/1.5)
     //img.blit(fir_img, 0, 0)
     fir_img.blit(sec_img, 550, 500);
+    fir_img.resize(128, 128)
     fir_img.getBuffer(Jimp.MIME_PNG, function(err, buffer){
              res.setHeader("Content-Type", 'image/png');
              res.send(buffer);
