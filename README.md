@@ -3,7 +3,7 @@
 ## 🚩 About
 PooPoo API is an Application Programming Interface ("API") which makes your coding life easier by providing some pre-made codes that you can use in your Discord Bots, websites, etc. Some crediting would be nice, but not mandatory.
 * Developers: frostzzone#4485 (Lead Developer), Retro#2448 (API Developer), Eruption#8390 (Website Designer).
-* Website: https://api.frostzzone.repl.co/.
+* Website: https://poopoo-api.vercel.app/.
 * Package: https://www.npmjs.com/package/poopoo-api.
 * Discord Server: https://discord.gg/MfEXDm5mr6.
 
@@ -15,6 +15,7 @@ More features will be added in the future!
 * Pixelate Image: An API to pxelate images
 * Pikachu Meme: An API to make a surprised pikachu meme
 * Gun adder: An API to add a gun to images
+* More image gen: There's alot so....
 * Roman Numeral Converter: An API to convert roman numerals to numbers and numbers to roman numerals
 * Github Info: An API that can fetch a Github's user info.
 * Password Generator: An API that can generate a random and **unique** password.
