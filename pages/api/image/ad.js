@@ -20,7 +20,7 @@ Jimp.read(url, (err, ad) => {
   Jimp.read('https://poopoo-api.vercel.app/images/api/ad.png', (err, img) => {
       if (err) return res.setHeader('Content-Type',  'application/json').send(JSON.stringify({error: "Make sure the url is an image"}, null, 4));
       ad.resize(230, 230)
-      img.blit(ava, 150, 75)
+      img.blit(ad, 150, 75)
     img.getBuffer(Jimp.MIME_PNG, function(err, buffer){
              res.setHeader("Content-Type", 'image/png');
              res.send(buffer);
