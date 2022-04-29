@@ -77,6 +77,19 @@
       font-size: 125%;
       font-weight: bold;
     }
+
+    .featured > div{
+      padding: 1em;
+      margin: 0.5em;
+      background-color: #292929;
+      border-radius: 0.5em;
+    }
+
+    .featured-type {
+      font-size: 80% !important;
+      font-weight: normal;
+      text-align: left;
+    }
     
     #faq {
       padding: 1em -5%;
@@ -218,16 +231,26 @@
       <section id="api">
         <div>
           <h2>Current APIs</h2>
-          <p><a href="/api">Check out the current stuff here</a></p>
-          <div class="featured-apis">
+          <p><a href="/api">Check out the full list of APIs here!</a></p>
+
+
+          <!-- WIP section -->
+          <h2>Featured</h2>
+          <div class="featured">
             <div>
+              <p class="featured-type">API</p>
               <h3>Web Screenshoter</h3>
-              <p></p>
+              <p>An API that can screenshot websites</p>
+            </div>
+            <div>
+              <p class="featured-type">News</p>
+              <h3>Test</h3>
+              <p>test</p>
             </div>
           </div>
         </div>
         <div>
-          <h2>Join Discord:</h2>
+          <h2>Join Discord</h2>
         <iframe src="https://discord.com/widget?id=958019432721055765&theme=dark" style="border-radius: 0.5em; margin-bottom: 3.5em;" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
         </div>
       </section>
