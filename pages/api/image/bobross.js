@@ -29,5 +29,4 @@ Jimp.read(url, (err, art) => {
 })
 })
 })
-
 }
