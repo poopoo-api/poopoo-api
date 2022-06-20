@@ -92,14 +92,20 @@ header p {
 }
 
 footer {
+  padding: 3.5em;
+  min-height: 400px;
   overflow: hidden;
   background-color: #0d0d0d;
   margin-top: 3.5em;
 }
 
+.footer-credits {
+  font-size: 120%;
+  color: #d4d4d4;
+  font-weight: bold;
+}
+
 header, footer {
-  min-height: 200px;
-  top: 0;
   position: relative;
 }
 
@@ -147,6 +153,14 @@ h2 {
   -webkit-text-fill-color: transparent;
   animation: gradient 5s ease-in-out infinite;
   background-size: 400% 400%;
+}
+
+footer h2 {
+  color: white;
+  text-align: left;
+  -webkit-background-clip: border-box;
+  -webkit-text-fill-color: initial;
+  animation: none;
 }
 
 h3 {

@@ -55,40 +55,40 @@
       transition: all 0.5s ease-in-out;
     }
 
-    #api {
-      background-size: cover;
+     #api {
+       background-color: #121212; 
+       margin: 0 -5.4%;
+/*       background-size: cover;
       background-image: url("images/banner2.jpg");
       background-repeat: no-repeat;
       text-align: center;
-      margin: 0 -5.4%;
+      display: flex;
+      justify-content: space-around; */
+    }
+
+    .pro-con {
       display: flex;
       justify-content: space-around;
+      align-content: center;
     }
 
-    #api h2 {
-      color: white;
+    pro-con > div {
+      width: 50%;
+      padding: 2.5em;
       text-align: center;
-      -webkit-background-clip: border-box;
-      -webkit-text-fill-color: initial;
     }
 
-    #api p {
-/*       padding-bottom: 3.5em; */
-      font-size: 125%;
-      font-weight: bold;
+    #api h3 {
+      font-size: 180%;
     }
-
-    .featured > div{
-      padding: 1em;
-      margin: 0.5em;
-      background-color: #292929;
-      border-radius: 0.5em;
+    
+    #api h2 {
+      background-image: linear-gradient(-45deg , #2ed9e6, #1d72e0, #2e52f2, #482ef2);
     }
-
-    .featured-type {
-      font-size: 80% !important;
-      font-weight: normal;
-      text-align: left;
+    
+    #api img {
+      width: 50%;
+      padding: 3.5em 0;
     }
     
     #faq {
@@ -133,6 +133,7 @@
     .question h3 {
       font-size: 110%;
       color: white;
+      text-align: left;
     }
   
     .question p {
@@ -155,11 +156,6 @@
       header {
         background-attachment: fixed;
       }
-
-      #api {
-        background-attachment: fixed;
-        background-position: center;
-      }
     }
     
     @media only screen and (max-width: 850px) {      
@@ -180,6 +176,15 @@
 
         .developers > div {
           width: 100%;
+        }
+
+        .pro-con {
+          flex-direction: column;
+        }
+
+        .pro-con > div {
+          padding: 0;
+          padding-top: 2.5em;
         }
     }
 </style>
@@ -229,30 +234,26 @@
           </div></center>
         </section>
       <section id="api">
-        <div>
           <h2>Current APIs</h2>
-          <p><a href="/api">Check out the full list of APIs here!</a></p>
-
-
-          <!-- WIP section -->
-          <h2>Featured</h2>
-          <div class="featured">
+          <p style="text-align: center; font-weight: bold;"><a href="/api">Check out the full list of APIs here!</a></p>
+          <center><div class="pro-con">
             <div>
-              <p class="featured-type">API</p>
-              <h3>Web Screenshoter</h3>
-              <p>An API that can screenshot websites</p>
+              <img src="images/pros.png" alt="Cool poop">
+              <h3>Pros</h3>
+              <p>99% uptime<br>Easy to use and is highly flexible<br>A lot of image editing APIs!!!<br>...and much more!</p>
+              
             </div>
             <div>
-              <p class="featured-type">News</p>
-              <h3>Test</h3>
-              <p>test</p>
+              <h3>Cons</h3>
+              <p>If you have any issues or want to make a suggestion,<br>make sure to tell us in our Discord Server!<br><span style="font-style: italic;">The poop is always listening.</span></p>
+              <img src="images/cons.png" alt="Furious poop">
             </div>
           </div>
-        </div>
-        <div>
+          </center>
+<!--         <div>
           <h2>Join Discord</h2>
         <iframe src="https://discord.com/widget?id=958019432721055765&theme=dark" style="border-radius: 0.5em; margin-bottom: 3.5em;" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-        </div>
+        </div> -->
       </section>
       <section id="faq">
             <h2>Frequently Asked Questions</h2>
@@ -264,7 +265,7 @@
         </div>
         <div class="question">
             <button><h3>What's the reason behind the name "PooPoo API"?</h3></button>
-            <p>This was originally going to be a bad api 💩, but it progressed into a good api<img src="images/why_poopoo.jpg" height="70"/></p>
+            <p>This was originally going to be a bad API 💩, but it progressed into a good API<br><img width="50%" src="images/why_poopoo.jpg"/></center></p>
         </div>
         <div class="question">
             <button><h3>Did you guys make any money out of this?</h3></button>
@@ -280,9 +281,9 @@
 
     <footer>
         <div>
-            <h1>Thanks for taking a look</h1>
-            <p>Do you agree this api is bad</p>
-            <b style="color: #999">PooPoo API Team (frostzzone, Eruption, Retro) 2022</b>
+            <h2>PooPoo API</h2>
+            <p class="footer-credits">Developed by PooPoo Devs (frostzzone, Eruption, Retro) 2022</p>
+            <p style="color: #d4d4d4; padding-top: 1.2em;"><b>Featured:</b> <a href="https://www.npmjs.com/package/@retro_ig/poopoo-api-package">PooPoo API npm package</a></p>
         </div>
     </footer>
     <script type="text/javascript" defer>
