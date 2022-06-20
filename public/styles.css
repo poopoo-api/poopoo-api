@@ -99,6 +99,10 @@ footer {
   margin-top: 3.5em;
 }
 
+footer a {
+  color: #d0adf0;
+}
+
 .footer-credits {
   font-size: 120%;
   color: #d4d4d4;
