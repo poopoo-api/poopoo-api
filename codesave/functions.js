@@ -1,3 +1,4 @@
+const data = require("./data.json")
 /* Random item from list */
 function listsGetRandomItem(list, remove) {
         var x = Math.floor(Math.random() * list.length);
@@ -28,33 +29,36 @@ function listsGetSortCompare(type, direction) {
 
 /* Question of the day endpoint */
 const question = function () {
-  const list = [
-    "Are you happy about yourself?",
-    "Do you like playing video games? If yes, then what is your favorite game genre?",
-    "What was your favorite hobby as a kid?",
-    "Has your life been rough recently?",
-    "Why did you choose your usernames? What is the story behind them?",
-    "If you have a chance to change the past, what would you change?",
-    "Have you ever been bullied at school/work? What did you do to stop the bullying?",
-    "Do you know any coding languages?",
-    "Is there anything that you about yourself that you find weird?",
-    "What continents are you from? (Asia/Africa/North America/South America/Antarctica/Europe/Australia)",
-    "[Troll Question] Do you like hamburger with pinapples?",
-    "Would you rather to eat at KFC or McDonalds?",
-    "Have you broken any rules in a Discord server?",
-    "Do you have a job? If yes, then what is it?",
-    "What is your favorite season? (Spring/Summer/Autumn/Winter)",
-    "What do you do during freetimes?",
-    "Would you consider yourself a nerd?",
-    "If you have a choice to choose your nationality, what country would you want to be in?",
-    "What chatting app do you use the most? (Discord, Skype, Twitter DM, Messenger, Slack, etc)",
-    "Does Children's Online Privacy Protection Rule (\"COPPA\") actually protects children or is it blocking kids from seeing the reality?",
-    "Do you have enough money to afford Minecraft?",
-    "If you have a chance to change your past, what would you change?",
-    "Have you ever been hacked? If yes, how did you try to get your accounts back?",
-    "What can you do to calm yourself down when you are mad?"
-  ]
+  const list = data["qotd"]
   return listsGetRandomItem(list, false);
+}
+
+const roast = function () {
+  const list = data["roasts"]
+  return listsGetRandomItem(list, false);
+}
+
+const emojify = function (inpu) {
+  const alph = data["alpha"]
+  const unicodealph = data["unicodeAlpha"]
+  var output = [],
+    object = new Object(),
+  input = inpu.toLowerCase();
+        var i_end = input.length;
+        var i_inc = 1;
+        var i
+        if (1 > i_end) {
+            i_inc = -i_inc;
+        }
+        for (i = 1; i_inc >= 0 ? i <= i_end : i >= i_end; i += i_inc) {
+           if (alph.includes(input.charAt((i - 1)))) {output.push((unicodealph[((alph.indexOf(input.charAt((i - 1))) + 1) - 1)]));
+          } else {
+             output.push(input.charAt((i - 1)))
+          }
+        }
+  object['output'] = output.join(" ");
+  object['length'] = output.join(" ").length;
+  return object;
 }
 
 /* Github info endpoint */
@@ -105,8 +109,10 @@ const emoji = async function(text, type, res, fetch){
 }
 
 module.exports = {
-    question: question,
+  question: question,
+  roast: roast,
   git: git,
   emoji: emoji,
+  emojify: emojify,
   yt: require('./youtube.js')
 };

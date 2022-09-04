@@ -19,183 +19,217 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
 
   <style>
+    header {
+      background-image: url("images/banner2.jpg");
+    }
+
+    #utilities h2 {
+      color: white;
+      text-align: left;
+      -webkit-background-clip: border-box;
+      -webkit-text-fill-color: initial;
+      animation: none;
+    }
+    
+    #search {
+    width: 100%;
+    padding: 0.8em;
+    background-color: #3b3b3b;
+    font-size: 92%;
+    border: 0.85px solid #0d0d0d;
+    }
+    
     .cardlist {
-        display: flex;
-        flex-direction: row;
-        gap: 1em;
-        flex-wrap: wrap;
-        padding-top: 1em;
-        animation: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0s 1 slideInFromBottom;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.75em;
+      flex-wrap: wrap;
+      padding-top: 1em;
+      animation: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0s 1 slideInFromBottom;
     }
 
   
     @keyframes slideInFromBottom {
-        0% {
-            transform: translateY(50%);
-            filter: opacity(0);
-        }
+      0% {
+          transform: translateY(50%);
+          filter: opacity(0);
+      }
 
-        100% {
-            transform: translateY(0);
-            filter: opacity(1);
-        }
-    }
+      100% {
+          transform: translateY(0);
+          filter: opacity(1);
+      }
+  }
 
-    @keyframes cardDelete {
-        0% {
-            transform: translateY(0);
-            filter: opacity(1);
-        }
+  @keyframes cardDelete {
+      0% {
+          transform: translateY(0);
+          filter: opacity(1);
+      }
 
-        50% {
-            transform: translateY(100%);
-            filter: opacity(0);
-            width: 200px;
-        }
+      50% {
+          transform: translateY(100%);
+          filter: opacity(0);
+          width: 200px;
+      }
 
-        100% {
-            transform: translateY(100%);
-            filter: opacity(0);
-            width: 0px;
-        }
+      100% {
+          transform: translateY(100%);
+          filter: opacity(0);
+          width: 0px;
+      }
     }
 
     @keyframes rowDelete {
-        0% {
-            transform: translateX(0);
-            filter: opacity(1);
-        }
+      0% {
+          transform: translateX(0);
+          filter: opacity(1);
+      }
 
-        50% {
-            transform: translateX(-100%);
-            filter: opacity(0);
-        }
+      50% {
+          transform: translateX(-100%);
+          filter: opacity(0);
+      }
 
-        100% {
-            transform: translateX(-100%);
-            filter: opacity(0);
-        }
+      100% {
+          transform: translateX(-100%);
+          filter: opacity(0);
+      }
     }
 
     @keyframes cardAdd {
-        0% {
-            transform: translateY(100%);
-            filter: opacity(0);
-            width: 0px;
-        }
+      0% {
+          transform: translateY(100%);
+          filter: opacity(0);
+          width: 0px;
+      }
 
-        50% {
-            transform: translateY(100%);
-            filter: opacity(0);
-            width: 200px;
-        }
+      50% {
+          transform: translateY(100%);
+          filter: opacity(0);
+          width: 200px;
+      }
 
-        100% {
-            transform: translateY(0);
-            filter: opacity(1);
-        }
-    }
+      100% {
+          transform: translateY(0);
+          filter: opacity(1);
+      }
+  }
 
-    @keyframes shakeDeny {
-        0% {
-            transform: 0;
-            filter: brightness(1);
-        }
+  @keyframes shakeDeny {
+      0% {
+          transform: 0;
+          filter: brightness(1);
+      }
 
-        25% {
-            transform: translateX(-10px);
-            filter: brightness(0.8);
-        }
+      25% {
+          transform: translateX(-10px);
+          filter: brightness(0.8);
+      }
 
-        75% {
-            transform: translateX(10px);
-            filter: brightness(0.8);
-        }
+      75% {
+          transform: translateX(10px);
+          filter: brightness(0.8);
+      }
 
-        100% {
-            filter: brightness(1);
-            transform: 0;
-        }
+      100% {
+          filter: brightness(1);
+          transform: 0;
+      }
     }
 
     .card {
-        width: 200px;
-        position: relative;
-        flex-shrink: 0;
-        height: 120px;
-        border-radius: 0.25em;
-        z-index: 1;
-        user-select: none;
-        transition: transform 0.2s, box-shadow 0.2s;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
-        background-position: 100% 0% !important;
-        overflow: hidden;
-        background-color: white;
+      padding: 0.5em;
+      width: 250px;
+      position: relative;
+      flex-shrink: 0;
+      height: 120px;
+      border-radius: 0.25em;
+      z-index: 1;
+      user-select: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      overflow: hidden;
     }
 
     .card:not([id]):not(.card-empty):not(.my-card) {
-        text-shadow: 2px 2px 7px #121212;
-        background: rgb(167,93,56);
-background: linear-gradient(130deg, rgba(167,93,56,1) 0%, rgba(180,57,57,1) 100%);
-        box-shadow: 4px 5px #0f0f0f;
+      text-shadow: 2px 2px 7px #121212;
+      background: #292929;
+      box-shadow: 4px 5px #0f0f0f;
+      height: 300px;
     }
 
     .card::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        z-index: -1;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
     }
 
     .card:hover:not(.card-empty):not(.card-disabled) {
-        transform: scale(1.1);
-        z-index: 2;
-        box-shadow: 0 0 5px black;
+      transform: scale(1.1);
+      z-index: 2;
+      box-shadow: 0 0 5px black;
     }
 
     .card a {
-        position: absolute;
-        height: 100%;
-        width: calc(100% - 10px);
-        color: inherit;
-        top: 0;
-        text-decoration: none;
-        overflow: hidden;
-        padding: 5px;
-        transition: transform 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+      position: absolute;
+      height: 100%;
+      width: calc(100% - 10px);
+      color: inherit;
+      top: 0;
+      text-decoration: none;
+      overflow: hidden;
+      padding: 5px;
+      transition: transform 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+      text-decoration: none !important;
     }
 
     .card:not(.card-empty):not(.card-disabled) a:active {
-        transform: scale(0.9);
-        z-index: 2;
+      transform: scale(0.9);
+      z-index: 2;
     }
 
     .card a * {
-        margin-top: 15px;
+      margin-top: 15px;
     }
 
     .card:hover:not(.card-empty) a h1 {
-        padding-top: 0px;
+      padding-top: 0px;
     }
 
-    .card p {
-        font-size: 105%;
-        margin-top: -3px;
+    .card h3 {
+      text-align: center;
+      font-size: 150%;
     }
 
+    .card-desc {
+      font-size: 120%;
+    }
+
+    .card-url {
+      font-size: 105%;
+      font-style: italic;
+      
+    }
+
+    .card img {
+      width: 100%;
+    }
+    
     .card-empty {
-        border: 3px dashed white;
-        width: 194px;
-        background-color: transparent;
-        height: 94px;
+      border: 3px dashed white;
+      width: 194px;
+      background-color: transparent;
+      height: 94px;
     }
 
     .card-empty:before {
-        background: none;
+      background: none;
     }
 
     /* my links */
@@ -220,136 +254,152 @@ background: linear-gradient(130deg, rgba(167,93,56,1) 0%, rgba(180,57,57,1) 100%
           <li><a href="./#about">About</a></li>
           <li><a href="./api">Current APIs</a></li>
           <li><a href="./#faq">FAQ</a></li>
+          <li style="float: right"><a href="https://discord.gg/MfEXDm5mr6"><svg height="32" width="118" class="filter-svg-nav" >
+     <image xlink:href="images/discord.svg" src="images/discord.png" height="32"/>    
+</svg></a>
         </ul>
       </nav>
     <header>
         <div>
-            <h1>PooPoo API</h1>
-            <p>A very simple api that you might use</p>
+            <h1>Current APIs</h1>
+            <p>Enjoy a list of the current poo-poos</p>
         </div>
-        <!--<div class="gradient-effect"></div>-->
     </header>
 
     <main>
-        <section id="current-apis">
-            <h2 style="background-image: linear-gradient(90deg, rgba(56,74,255,1) 0%, rgba(196,0,255,1) 100%)">Current APIs</h2>
+      <section id="utilities">
+        <h2 style="">Searching is here! <code><small>beta</small></code></h2>
+        <input type="text" id="search" placeholder="Search for your favorite APIs...">
+      </section>
+        <section id="image-apis">
+            <h2 style="background-image: linear-gradient(90deg, rgba(56,74,255,1) 0%, rgba(196,0,255,1) 100%)">Image APIs</h2>
             <div class="cardlist" id="workingOn">
-              <article class="card" time="0" title="An API to screenshot websites.">
-                    <a href="api/image">
-                        <h3>Web screenshoter</h3>
-                        <p>/image?url=https://google.com</p>
+              <article class="card">
+                <a href="api/image?url=https://google.com">
+                  <h3>Web Screenshoter</h3>
+                  <p class="card-desc">Take high quality website screenshots with this API!</p>
+                  <p class="card-url">/image?url=https://google.com</p>
+                  <img src="https://poopoo-api.vercel.app/api/image?url=https://google.com">
+                </a>
+              </article>
+              <article class="card">
+                <a href="api/invert?url=https://poopoo-api.vercel.app/images/example.png">
+                  <h3>Image Inverter</h3>
+                  <p class="card-desc">Invert the colors of an image!</p>
+                  <p class="card-url">/invert?url=https://poopoo-api.vercel.app/images/example.png</p>
+                  <img src="https://poopoo-api.vercel.app/api/invert?url=https://poopoo-api.vercel.app/images/example.png">
+                </a>
+              </article>
+              <article class="card">
+                <a href="api/grayscale?url=https://poopoo-api.vercel.app/images/example.png">
+                  <h3>Grayscale Image</h3>
+                  <p class="card-desc">Grayscale an image with this simple API!</p>
+                  <p class="card-url">/grayscale?url=https://poopoo-api.vercel.app/images/example.png</p>
+                   <img src="https://poopoo-api.vercel.app/api/grayscale?url=https://poopoo-api.vercel.app/images/example.png">
+                </a>
+              </article>
+              <article class="card">
+                <a href="api/pixel?url=https://poopoo-api.vercel.app/images/example.png">
+                  <h3>Pixlate Image</h3>
+                  <p class="card-desc">Pixelate an image with this simple API!</p>
+                  <p class="card-url">/pixel?strength=10&url=https://poopoo-api.vercel.app/images/example.png</p>
+                   <img src="https://poopoo-api.vercel.app/api/pixel?strength=10&url=https://poopoo-api.vercel.app/images/example.png">
+                </a>
+              </article>
+              <article class="card" title="An API to add a gun to images.">
+                <a href="api/gun?url=https://poopoo-api.vercel.app/images/example.png">
+                  <h3>Gun</h3>
+                  <p class="card-desc">Uh oh, watch out for that dangerous gun!</p>
+                  <p class="card-url">/gun?url=https://poopoo-api.vercel.app/images/example.png</p>
+                  <img style="width:70%;" src="https://poopoo-api.vercel.app/api/gun?url=https://poopoo-api.vercel.app/images/example.png">
                     </a>
                 </article>
-              <article class="card" time="0" title="An API to invert the color of images.">
-                    <a href="api/invert">
-                        <h3>Image color inverter</h3>
-                        <p>go to <b>/invert</b> for more info</p>
-                    </a>
-                </article>
-              <article class="card" time="0" title="An API to grayscale the color of images.">
-                    <a href="api/grayscale">
-                        <h3>Grayscale image</h3>
-                        <p>go to <b>/grayscale</b> for more info</p>
-                    </a>
-                </article>
-              <article class="card" time="0" title="An API to pixate images.">
-                    <a href="api/pixel">
-                        <h3>Pixlate image</h3>
-                        <p>go to <b>/pixel</b> for more info</p>
-                    </a>
-                </article>
-              <article class="card" time="0" title="An API to add a gun to images.">
-                    <a href="api/gun">
-                        <h3>Gun</h3>
-                        <p>go to <b>/gun</b> for more info</p>
-                    </a>
-                </article>
-              <article class="card" time="0" title="An API to make a surprised pikachu meme">
+            </div>
+        </section>
+        <section id="unorganized">
+          <h2 style="background-image: linear-gradient(90deg, rgba(56,74,255,1) 0%, rgba(196,0,255,1) 100%)">Unorganized</h2>
+          <div class="cardlist" id="workingOn">
+              <article class="card" title="An API to make a surprised pikachu meme">
                     <a href="api/pikachu">
                         <h3>Pikachu meme</h3>
                         <p>go to <b>/pikachu</b> for more info</p>
                     </a>
                 </article>
-              <article class="card" time="0" title="PAGE for some image gen info stuff">
+              <article class="card" title="PAGE for some image gen info stuff">
                     <a href="api/image/gen">
                         <h3>More image gen</h3>
                         <p>Click to get info on some image gen stuff</p>
                     </a>
                 </article>
-              <article class="card" time="0" title="An API ato convert roman numerals">
+              <article class="card" title="An API ato convert roman numerals">
                     <a href="api/roman">
                         <h3>Roman numerals converter</h3>
                         <p>go to <b>/roman</b> for more info</p>
                     </a>
                 </article>
-                <article class="card" time="0" title="An API that can show information about a Github user.">
+                <article class="card" title="An API that can show information about a Github user.">
                     <a href="api/github?name=frostzzone">
                         <h3>Github Info</h3>
                         <p>/github?name=user</p>
                     </a>
                 </article>
-              <article class="card" time="0" title="An API that can search for channels and videos on youtube">
+              <article class="card" title="An API that can search for channels and videos on youtube">
                     <a href="api/youtube">
                         <h3>Youtube search</h3>
                         <p>go to <b>/youtube</b> for more info</p>
                     </a>
                 </article>
-                <article class="card" time="0" title="An API that can randomly generate a question (good for QOTD bots).">
+                <article class="card" title="An API that can randomly generate a question (good for QOTD bots).">
                     <a href="api/qotd">
                         <h3>QOTD</h3>
                         <p>/qotd</p>
                     </a>
                 </article>
-              <article class="card" time="0" title="An API that can randomly generate a password.">
+              <article class="card" title="An API that can randomly generate a password.">
                     <a href="api/password">
                         <h3>Password Generator</h3>
                         <p>/password</p>
                     </a>
                 </article>
-              <article class="card" time="0" title="An API to encode text to binary">
+              <article class="card" title="An API to encode text to binary">
                     <a href="api/encode?text=hi">
                         <h3>Binary Encoder</h3>
                         <p>/encode?text=text</p>
                     </a>
                 </article>
-              <article class="card" time="0" title="An API to decode binary to text">
+              <article class="card" title="An API to decode binary to text">
                     <a href="api/decode?binary=01101000 01101001">
                         <h3>Binary Decoder</h3>
                         <p>/decode?binary=binary</p>
                     </a>
               </article>
-              <article class="card" time="0" title="An API to make annoying spoilers">
+              <article class="card" title="An API to make annoying spoilers">
                     <a href="api/spoil?text=hello">
                         <h3>Annoying Discord Spoilers</h3>
                         <p>/spoil?text=text</p>
                     </a>
               </article>
-              <article class="card" time="0" title="An API to remove stuff from text">
+              <article class="card" title="An API to remove stuff from text">
                     <a href="api/remove">
                         <h3>Remove Emojis/Characters</h3>
                         <p>go to <b>/remove </b> for more info</p>
                     </a>
               </article>
-              <article class="card" time="0" title="An API to Flatten lists">
+              <article class="card" title="An API to Flatten lists">
                     <a href="api/flat">
                         <h3>Remove lists from lists (flatten list)</h3>
                         <p>go to <b>/flat </b> for more info</p>
                     </a>
               </article>
-                <article class="card card-empty card-disabled">
-                    <a>
-                        <h3>Coming soon</h3>
-                    </a>
-                </article>
             </div>
         </section>
     </main>
 
-    <footer>
+   <footer>
         <div>
-            <h1>Thanks for taking a look</h1>
-            <p>Do you agree this api is bad</p>
-            <b style="color: #999">PooPoo API Team (frostzzone, Eruption, Retro) 2022</b>
+            <h2>PooPoo API</h2>
+            <p class="footer-credits">Developed by PooPoo Devs (frostzzone, Eruption, Retro) 2022</p>
+            <p style="color: #d4d4d4; padding-top: 1.2em;"><b>Featured:</b> <a href="https://www.npmjs.com/package/@retro_ig/poopoo-api-package" target="_blank">PooPoo API npm package</a></p>
         </div>
     </footer>
 

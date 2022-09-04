@@ -6,6 +6,7 @@ export default async (req, res) => {
   info['/image/beautiful'] = ["Now this... this is beautiful","/beautiful?url=https://poopoo-api.vercel.app/images/example.png"]
   info['/image/boboross'] = ["Now this is art","/bobross?url=https://poopoo-api.vercel.app/images/example.png"] 
   info['/image/qr'] = ["Generate a qrcode from an input","/qr?input=Hello"]
+  info["/image/drake"] = ["Nah, Yah", "/drake?upperText=hello&lowerText=hallo"]
   
   res.setHeader("Content-Type", "application/json")
   res.send(JSON.stringify({

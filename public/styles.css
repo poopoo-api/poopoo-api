@@ -92,14 +92,24 @@ header p {
 }
 
 footer {
+  padding: 3.5em;
+  min-height: 400px;
   overflow: hidden;
   background-color: #0d0d0d;
   margin-top: 3.5em;
 }
 
+footer a {
+  color: #d0adf0;
+}
+
+.footer-credits {
+  font-size: 120%;
+  color: #d4d4d4;
+  font-weight: bold;
+}
+
 header, footer {
-  min-height: 200px;
-  top: 0;
   position: relative;
 }
 
@@ -149,6 +159,14 @@ h2 {
   background-size: 400% 400%;
 }
 
+footer h2 {
+  color: white;
+  text-align: left;
+  -webkit-background-clip: border-box;
+  -webkit-text-fill-color: initial;
+  animation: none;
+}
+
 h3 {
   font-size: 140%;
 }
@@ -166,6 +184,12 @@ main a {
 
 main a:hover {
   text-decoration: underline; 
+}
+
+@media only screen and (min-width: 1336px) {
+  header {
+    background-attachment: fixed;
+  }
 }
 
 @keyframes gradient {
