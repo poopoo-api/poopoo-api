@@ -1,17 +1,29 @@
 const Canvas = require("@napi-rs/canvas")
 
-const applyText = (canvas, text, fontSize, font = "open-sans") => {
-  const context = canvas.getContext("2d");
+const wrapText = (res, txt, c, canvas, x, y, font, fontSize) => {
+	if(txt.length > 49) {
+		return res.status(200).setHeader("Content-Type", "application/json").send(JSON.stringify({
+			error: "Text cannot be of length 45 or above.",
+			info: "nah, yah", 
+			example: "/drake?upperText=hello&lowerText=hallo"
+		}))
+	} else {
+		c.font = `${fontSize}px ${font}`
+	}
+	
+	const lineheight = 80;
+	const lines = txt.split('\n');
 
-  fontSize += 10;
+	for (let i = 0; i<lines.length; i++) {
+		c.fillText(lines[i], x, y + (i*lineheight) );
+	}
+}
 
-  do {
-    context.font = `${(fontSize -= 10)}px ${font}`;
-  } while (context.measureText(text).width > canvas.width - 300);
-
-  return context.font;
-};
-
+const getText = (str) => {
+	var parts = str.match(/.{1,9}/g);
+	var newValue = parts.join("\n");
+	return newValue
+}
 
 export default async (req, res) => {
 
@@ -23,24 +35,20 @@ export default async (req, res) => {
   
   const canvas = Canvas.createCanvas(1920, 1080)
   const context = canvas.getContext("2d")
-  const backgroundImg = await Canvas.loadImage("https://api2.frostzzone.repl.co/images/api/drake.png");
+  const backgroundImg = await Canvas.loadImage("https://poopoo-api.vercel.app/images/api/drake.png");
   context.drawImage(backgroundImg, 0, 0)
   
   //upper text
-  context.font = "100px open-sans"
   context.fillStyle = "black"
-  context.fillText(upperText, 875, 150)
+  wrapText(res, getText(upperText), context, canvas, 875, 150, "open-sans", 100)
 
   //lower text
-  context.font = "100px open-sans"
   context.fillStyle = "black"
-  context.fillText(lowerText, 875, 655)
+  wrapText(res, getText(lowerText), context, canvas, 875, 655, "open-sans", 100)
+	
   const {data} = JSON.parse(JSON.stringify(await canvas.encode("png")))
-  //console.log(ahem)
-  
   const buffer = Buffer.from(data, "base64")
   res.setHeader("Content-Type", "image/png")
   res.send(buffer)
-  
 }
 
