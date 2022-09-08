@@ -1,5 +1,3 @@
-<!-- GOD GOTTA WORK ON THIS -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,11 +9,11 @@
   <link rel="stylesheet" type="text/css" href="./styles.css">
 
   <!-- Embed -->
-  <meta name="og:title" content="PooPoo API 💩">
+  <meta name="og:tittle" content="PooPoo API 💩">
   <meta name="og:description" content="A very simple (but bad) API that you might use">
   <meta name="og:image" content="./images/example.png">
   <meta name="theme-color" content="#f56642" />
-  <title>PooPoo API</title>
+  <tittle>PooPoo API</tittle>
 
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -214,7 +212,7 @@
     }
 
     .card-url {
-      font-size: 105%;
+      font-size: 100%;
       font-style: italic;
       
     }
@@ -265,19 +263,19 @@
         <div>
             <h1>Current APIs</h1>
             <p>Enjoy a list of the current poo-poos</p>
-            <p style="color: red;">This page is currently a mess sorry</p>
+            <p style="color: red;">⚠️ This page is under construction! ⚠️</p>
         </div>
     </header>
 
     <main>
       <section id="utilities">
         <h2 style="">Searching is here! <code><small>beta</small></code></h2>
-        <input type="text" id="search" placeholder="Search for your favorite APIs...">
+        <input type="search" id="search" placeholder="Search for your favorite APIs...">
       </section>
         <section id="image-apis">
             <h2 style="background-image: linear-gradient(90deg, rgba(56,74,255,1) 0%, rgba(196,0,255,1) 100%)">Image APIs</h2>
             <div class="cardlist" id="workingOn">
-              <article class="card">
+              <article class="card" data-tittle="Take high quality website screenshots with this API!">
                 <a href="api/image?url=https://google.com">
                   <h3>Web Screenshoter</h3>
                   <p class="card-desc">Take high quality website screenshots with this API!</p>
@@ -285,126 +283,129 @@
                   <img src="https://poopoo-api.vercel.app/api/image?url=https://google.com">
                 </a>
               </article>
-              <article class="card">
+              <article class="card" data-tittle="Invert the colors of an image with this simple API!">
                 <a href="api/invert?url=https://poopoo-api.vercel.app/images/example.png">
                   <h3>Image Inverter</h3>
-                  <p class="card-desc">Invert the colors of an image!</p>
+                  <p class="card-desc">Invert the colors of an image with this simple API!</p>
                   <p class="card-url">/invert?url=https://poopoo-api.vercel.app/images/example.png</p>
                   <img src="https://poopoo-api.vercel.app/api/invert?url=https://poopoo-api.vercel.app/images/example.png">
                 </a>
               </article>
-              <article class="card">
+              <article class="card" data-tittle="Grayscale an image with this simple API!">
                 <a href="api/grayscale?url=https://poopoo-api.vercel.app/images/example.png">
                   <h3>Grayscale Image</h3>
                   <p class="card-desc">Grayscale an image with this simple API!</p>
                   <p class="card-url">/grayscale?url=https://poopoo-api.vercel.app/images/example.png</p>
-                   <img src="https://poopoo-api.vercel.app/api/grayscale?url=https://poopoo-api.vercel.app/images/example.png">
+                  <img src="https://poopoo-api.vercel.app/api/grayscale?url=https://poopoo-api.vercel.app/images/example.png">
                 </a>
               </article>
-              <article class="card">
+              <article class="card" data-tittle="Pixelate an image with this simple API!">
                 <a href="api/pixel?url=https://poopoo-api.vercel.app/images/example.png">
                   <h3>Pixlate Image</h3>
                   <p class="card-desc">Pixelate an image with this simple API!</p>
                   <p class="card-url">/pixel?strength=10&url=https://poopoo-api.vercel.app/images/example.png</p>
-                   <img src="https://poopoo-api.vercel.app/api/pixel?strength=10&url=https://poopoo-api.vercel.app/images/example.png">
+                  <img src="https://poopoo-api.vercel.app/api/pixel?strength=10&url=https://poopoo-api.vercel.app/images/example.png">
                 </a>
               </article>
-              <article class="card" title="An API to add a gun to images.">
+              <article class="card" data-tittle="Uh oh, watch out for that dangerous gun! | Add a gun to any image!">
                 <a href="api/gun?url=https://poopoo-api.vercel.app/images/example.png">
                   <h3>Gun</h3>
-                  <p class="card-desc">Uh oh, watch out for that dangerous gun!</p>
+                  <p class="card-desc">Uh oh, watch out for that dangerous gun! | Add a gun to any image!</p>
                   <p class="card-url">/gun?url=https://poopoo-api.vercel.app/images/example.png</p>
                   <img style="width:70%;" src="https://poopoo-api.vercel.app/api/gun?url=https://poopoo-api.vercel.app/images/example.png">
-                    </a>
+                </a>
                 </article>
-              <article class="card" title="The drake 'Nah, Yah' meme with your text.">
+              <article class="card" data-tittle="Nah, yah meme.">
                 <a href="api/image/drake?upperText=hello&lowerText=hallo">
-                  <h3>Drake</h3>
-                  <p class="card-desc">hello: Nah, hallo: Yah</p>
+                  <h3>Drakeposting</h3>
+                  <p class="card-desc">The famous drake "Nah, yah" meme.</p>
                   <p class="card-url">/image/drake?upperText=hello&lowerText=hallo</p>
-                  <img src="https://api2.frostzzone.repl.co/api/image/drake?upperText=hello&lowerText=hallo">
+                  <img src="https://poopoo-api.vercel.app/api/image/drake?upperText=hello&lowerText=hallo">
                 </a>
               </article>
-			  <article class="card" title="Big brain guy meme with your text">
-				<a href="api/image/bigBrainGuy?text=Forgive%20is%20not%20%20an%20excuse">
-				  <h3>Drake</h3>
-				  <p class="card-desc">Big Brain Guy</p>
-				  <p class="card-url">image/bigBrainGuy?text=Forgive%20is%20not%20%20an%20excuse</p>
-				  <img src="https://api2.frostzzone.repl.co/api/image/bigBrainGuy?text=Forgive%20is%20not%20%20an%20excuse">
-				</a>
+			  <article class="card" data-tittle="THe famous big brain guy meme, 🧠🧠🧠🧠🧠">
+		        <a href="api/image/bigBrainGuy?text=Forgive%20is%20not%20%20an%20excuse">
+			        <h3>Big Brain Guy</h3>
+		          	<p class="card-desc">🧠🧠🧠🧠🧠</p>
+		        	<p class="card-url">image/bigBrainGuy?text=Forgive%20is%20not%20%20an%20excuse</p>
+				    <img src="https://poopoo-api.vercel.app/api/image/bigBrainGuy?text=Forgive%20is%20not%20%20an%20excuse">
+	        	</a>
               </article>
+              <article class="card" data-tittle="Make a surprised Pikachu meme!">
+                <a href="api/pikachu?text=macncheese">
+                  <h3>Pikachu</h3>
+                  <p class="card-desc">Make a surprised Pikachu meme!</p>
+                  <p class="card-url">/pikachu?text=macncheese</p>
+                  <img src="https://poopoo-api.vercel.app/api/pikachu?text=macncheese">
+                </a>
+                </article>
+                <article class="card" data-tittle="Click to get info on some other image generations stuff.">
+                  <a href="api/image/gen">
+                    <h3>More Image APIs</h3>
+                    <p class="card-desc">Click to get info on some other image generations stuff.</p>
+					          <img style="width: 70%" src="https://cdn-0.emojis.wiki/emoji-pics/twitter/question-mark-twitter.png" />
+                  </a>
+                </article>
             </div>
         </section>
         <section id="unorganized">
           <h2 style="background-image: linear-gradient(90deg, rgba(56,74,255,1) 0%, rgba(196,0,255,1) 100%)">Unorganized</h2>
           <div class="cardlist" id="workingOn">
-              <article class="card" title="An API to make a surprised pikachu meme">
-                    <a href="api/pikachu">
-                        <h3>Pikachu meme</h3>
-                        <p>go to <b>/pikachu</b> for more info</p>
-                    </a>
-                </article>
-              <article class="card" title="PAGE for some image gen info stuff">
-                    <a href="api/image/gen">
-                        <h3>More image gen</h3>
-                        <p>Click to get info on some image gen stuff</p>
-                    </a>
-                </article>
-              <article class="card" title="An API ato convert roman numerals">
+              <article class="card" data-tittle="An API ato convert roman numerals">
                     <a href="api/roman">
                         <h3>Roman numerals converter</h3>
                         <p>go to <b>/roman</b> for more info</p>
                     </a>
                 </article>
-                <article class="card" title="An API that can show information about a Github user.">
+                <article class="card" data-tittle="An API that can show information about a Github user.">
                     <a href="api/github?name=frostzzone">
                         <h3>Github Info</h3>
                         <p>/github?name=user</p>
                     </a>
                 </article>
-              <article class="card" title="An API that can search for channels and videos on youtube">
+              <article class="card" data-tittle="An API that can search for channels and videos on youtube">
                     <a href="api/youtube">
                         <h3>Youtube search</h3>
                         <p>go to <b>/youtube</b> for more info</p>
                     </a>
                 </article>
-                <article class="card" title="An API that can randomly generate a question (good for QOTD bots).">
+                <article class="card" data-tittle="An API that can randomly generate a question (good for QOTD bots).">
                     <a href="api/qotd">
                         <h3>QOTD</h3>
                         <p>/qotd</p>
                     </a>
                 </article>
-              <article class="card" title="An API that can randomly generate a password.">
+              <article class="card" data-tittle="An API that can randomly generate a password.">
                     <a href="api/password">
                         <h3>Password Generator</h3>
                         <p>/password</p>
                     </a>
                 </article>
-              <article class="card" title="An API to encode text to binary">
+              <article class="card" data-tittle="An API to encode text to binary">
                     <a href="api/encode?text=hi">
                         <h3>Binary Encoder</h3>
                         <p>/encode?text=text</p>
                     </a>
                 </article>
-              <article class="card" title="An API to decode binary to text">
+              <article class="card" data-tittle="An API to decode binary to text">
                     <a href="api/decode?binary=01101000 01101001">
                         <h3>Binary Decoder</h3>
                         <p>/decode?binary=binary</p>
                     </a>
               </article>
-              <article class="card" title="An API to make annoying spoilers">
+              <article class="card" data-tittle="An API to make annoying spoilers">
                     <a href="api/spoil?text=hello">
                         <h3>Annoying Discord Spoilers</h3>
                         <p>/spoil?text=text</p>
                     </a>
               </article>
-              <article class="card" title="An API to remove stuff from text">
+              <article class="card" data-tittle="An API to remove stuff from text">
                     <a href="api/remove">
                         <h3>Remove Emojis/Characters</h3>
                         <p>go to <b>/remove </b> for more info</p>
                     </a>
               </article>
-              <article class="card" title="An API to Flatten lists">
+              <article class="card" data-tittle="An API to Flatten lists">
                     <a href="api/flat">
                         <h3>Remove lists from lists (flatten list)</h3>
                         <p>go to <b>/flat </b> for more info</p>
@@ -436,5 +437,5 @@
         }
     </style>
 </body>
-
+<script src="./search.js"></script>
 </html>

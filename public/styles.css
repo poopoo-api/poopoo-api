@@ -203,3 +203,8 @@ main a:hover {
     background-position: 0% 50%;
   }
 }
+
+/* search bar */
+.hide {
+	display: none;
+}
