@@ -26,6 +26,7 @@
     #utilities h2 {
       color: white;
       text-align: left;
+      background-clip: border-box;
       -webkit-background-clip: border-box;
       -webkit-text-fill-color: initial;
       animation: none;
@@ -269,7 +270,7 @@
 
     <main>
       <section id="utilities">
-        <h2 style="">Searching is here! <code><small>beta</small></code></h2>
+        <h2>Searching is here! <code><small>beta</small></code></h2>
         <input type="search" id="search" placeholder="Search for your favorite APIs...">
       </section>
         <section id="image-apis">
@@ -314,7 +315,15 @@
                   <p class="card-url">/gun?url=https://poopoo-api.vercel.app/images/example.png</p>
                   <img style="width:70%;" src="https://poopoo-api.vercel.app/api/gun?url=https://poopoo-api.vercel.app/images/example.png">
                 </a>
-                </article>
+              </article>
+              <article class="card" data-tittle="This poop is epic! | Put a picture on a poo!">
+                <a href="api/poopify?url=https://poopoo-api.vercel.app/images/epicFace.png">
+                  <h3>Poopify</h3>
+                  <p class="card-desc">This poop is epic! | Put a picture on a poo!</p>
+                  <p class="card-url">/poopify?url=https://poopoo-api.vercel.app/images/epicFace.png</p>
+                  <img style="width:70%;" src="https://poopoo-api.vercel.app/api/poopify?url=https://poopoo-api.vercel.app/images/epicFace.png">
+                </a>
+              </article>
               <article class="card" data-tittle="Nah, yah meme.">
                 <a href="api/image/drake?upperText=hello&lowerText=hallo">
                   <h3>Drakeposting</h3>
