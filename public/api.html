@@ -13,7 +13,7 @@
   <meta name="og:description" content="A very simple (but bad) API that you might use">
   <meta name="og:image" content="./images/example.png">
   <meta name="theme-color" content="#f56642" />
-  <tittle>PooPoo API</tittle>
+  <tittle>PooPoo API | Current APIs</tittle>
 
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -29,7 +29,7 @@
       -webkit-background-clip: border-box;
       -webkit-text-fill-color: initial;
       animation: none;
-    }
+    } 
     
     #search {
     width: 100%;
@@ -274,7 +274,7 @@
       </section>
         <section id="image-apis">
             <h2 style="background-image: linear-gradient(90deg, rgba(56,74,255,1) 0%, rgba(196,0,255,1) 100%)">Image APIs</h2>
-            <div class="cardlist" id="workingOn">
+            <div class="cardlist">
               <article class="card" data-tittle="Take high quality website screenshots with this API!">
                 <a href="api/image?url=https://google.com">
                   <h3>Web Screenshoter</h3>
@@ -348,15 +348,41 @@
                 </article>
             </div>
         </section>
+        <section id="number-text-apis">
+          <h2 style="background-image: linear-gradient(90deg, rgba(56,74,255,1) 0%, rgba(196,0,255,1) 100%)">Number/Text APIs</h2>
+          <div class="cardlist">
+            <article class="card" data-tittle="An API that can randomly generate a uuid.">
+                    <a href="api/uuid">
+                        <h3>UUID generator</h3>
+                      <p data-tittle="Convert Roman numbers into normal intergers or do the oposite!" class="card-desc">Randomly gererate a UUID, it will always be different!</p>
+                        <p class="card-url">/api/uuid</p>
+                    </a>
+                </article>
+            <article class="card" data-tittle="An API ato convert roman numerals">
+              <a href="api/roman">
+                <h3>Roman Numerals Converter</h3>
+                          <p data-tittle="Convert Roman numbers into normal intergers or do the oposite!" class="card-desc">Convert Roman numbers into normal intergers or do the oposite!</p>
+                          <p class="card-url">/api/roman</p>
+                      </a>
+                  </article>
+                  <article class="card" data-tittle="An API to remove stuff from text">
+                    <a href="api/remove">
+                      <h3>Remove Emojis/Characters</h3>
+                        <p data-tittle="Remove all emojis from text | Give a list of emojis | Remove every character except letters and numbers" class="card-desc">Remove all emojis from text | Give a list of emojis | Remove every character except letters and numbers</p>
+                        <p class="card-url">/api/remove</p>
+                      </a>
+                </article>
+                <article class="card" data-tittle="An API to Flatten lists">
+                      <a href="api/flat">
+                          <h3>Remove lists from lists (flatten list)</h3>
+                          <p>go to <b>/flat </b> for more info</p>
+                      </a>
+                </article>
+          </div>
+        </section>
         <section id="unorganized">
           <h2 style="background-image: linear-gradient(90deg, rgba(56,74,255,1) 0%, rgba(196,0,255,1) 100%)">Unorganized</h2>
           <div class="cardlist" id="workingOn">
-              <article class="card" data-tittle="An API ato convert roman numerals">
-                    <a href="api/roman">
-                        <h3>Roman numerals converter</h3>
-                        <p>go to <b>/roman</b> for more info</p>
-                    </a>
-                </article>
                 <article class="card" data-tittle="An API that can show information about a Github user.">
                     <a href="api/github?name=frostzzone">
                         <h3>Github Info</h3>
@@ -397,18 +423,6 @@
                     <a href="api/spoil?text=hello">
                         <h3>Annoying Discord Spoilers</h3>
                         <p>/spoil?text=text</p>
-                    </a>
-              </article>
-              <article class="card" data-tittle="An API to remove stuff from text">
-                    <a href="api/remove">
-                        <h3>Remove Emojis/Characters</h3>
-                        <p>go to <b>/remove </b> for more info</p>
-                    </a>
-              </article>
-              <article class="card" data-tittle="An API to Flatten lists">
-                    <a href="api/flat">
-                        <h3>Remove lists from lists (flatten list)</h3>
-                        <p>go to <b>/flat </b> for more info</p>
                     </a>
               </article>
             </div>

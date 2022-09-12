@@ -20,6 +20,7 @@
     "qrcode": "^1.5.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "uuid": "^9.0.0",
     "valid-url": "^1.0.9",
     "youtubei": "^0.0.1-rc.35"
   },
