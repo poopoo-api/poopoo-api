@@ -14,8 +14,8 @@ export default async (req, res) => {
   if (isValidUrl(url) !== true || url.includes("<" || ">" || "<script>" || "</script>") || encodeURIComponent(url).includes("%3C" || "%3E" || "%20")) {
     return res.status(200).setHeader('Content-Type', 'application/json').send(JSON.stringify({
       error: "provide valid url",
-      info: "Add a gun to an image",
-      example: "/gun?url=https://poopoo-api.vercel.app/images/example.png"
+      info: "Put any picture on a poo",
+      example: "/poopify?url=https://poopoo-api.vercel.app/images/epicFace.png"
     }, null, 4));
   }
 
