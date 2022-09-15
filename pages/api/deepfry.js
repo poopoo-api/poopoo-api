@@ -12,6 +12,9 @@ function isValidUrl(string) {
 
 export default async (req, res) => {
   let url = req.query.url
+  const iterations = req.query.iterations ? Number(req.query.iterations) : 10
+  if (iterations < 0) return res.setHeader('Content-Type', 'application/json').send(JSON.stringify({ error: "Iterations must be higher than 0" }, null, 4));
+  if (iterations > 100) return res.setHeader('Content-Type', 'application/json').send(JSON.stringify({ error: "Iterations must be less than or equal to 100" }, null, 4));
   if (isValidUrl(url) !== true || url.includes("<" || ">" || "<script>" || "</script>") || encodeURIComponent(url).includes("%3C" || "%3E" || "%20")) {
     return res.status(200).setHeader('Content-Type', 'application/json').send(JSON.stringify({
       error: "provide valid url",
@@ -20,7 +23,7 @@ export default async (req, res) => {
   }
   Jimp.read(url, (err, image) => {
     if (err) return res.setHeader('Content-Type', 'application/json').send(JSON.stringify({ error: "Make sure the url is an image" }, null, 4));
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < iterations; i++) {
       image.quality(1)
       image.convolute([
         [0, -1, 0],
