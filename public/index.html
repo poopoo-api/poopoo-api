@@ -220,7 +220,7 @@
           <br>
           <p><a class="github-button" href="https://github.com/frostzzone/poopoo-api" data-icon="octicon-star" data-show-count="true" aria-label="Star frostzzone/poopoo-api on GitHub">Star</a> <a class="github-button" href="https://github.com/frostzzone/poopoo-api/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork frostzzone/poopoo-api on GitHub">Fork</a> <a class="github-button" href="https://github.com/frostzzone/poopoo-api/issues" data-icon="octicon-issue-opened" data-show-count="true" aria-label="Issue frostzzone/poopoo-api on GitHub">Issue</a></p>
           <h2>Developers</h2>
-          <div class="developers">
+          <div class="developers" id="Developers">
             <div class="dev">
               <img src="images/avatar/frostzzone.png" alt="frostzzone's profile">
               <h3>frostzzone#4486</h3>
@@ -299,6 +299,7 @@
             <h2>PooPoo API</h2>
             <p class="footer-credits">Developed by PooPoo Devs (frostzzone, Eruption, Retro, Kingerous, JeremyGamer13) 2022</p>
             <p style="color: #d4d4d4; padding-top: 1.2em;"><b>Featured:</b> <a href="https://www.npmjs.com/package/@retro_ig/poopoo-api-package" target="_blank">PooPoo API npm package</a></p>
+          <p id="p1">Hello World!</p>
         </div>
     </footer>
     <script type="text/javascript" defer>
@@ -323,6 +324,50 @@
                 faq.classList.toggle('show');
             })
         } )
+    </script>
+  <script>
+    //Auto update credits
+      var url = "https://getpantry.cloud/apiv1/pantry/04190bfb-0547-43e3-879f-a50647c395b3/basket/poopoo-api-devs";
+
+var xhr = new XMLHttpRequest();
+xhr.open("GET", url);
+
+xhr.setRequestHeader("Accept", "application/json");
+
+xhr.onreadystatechange = function () {
+   if (xhr.readyState === 4) {
+    let data = JSON.parse(xhr.responseText);
+     console.log("fetched")
+     document.getElementById("p1").innerHTML = data["devs"][0]["name"];
+     let list = []
+     for (let i = 0; i < data["devs"].length; i++) {
+       let roles = []
+       for (let j = 0; j < data["devs"][j]["role"].length; i++) {
+         let role = "1019985488049881108"//data["devs"][0]["role"][j]
+         console.log("rolein")
+         //Website Designer, API Developer
+         if(role == "1019985488049881108"){
+           roles.push("Lead Developer")
+         } else if(role == "1019985588792868965") {
+           roles.push("API Developer")
+         } else if(role == "1019985588792868965") {
+           roles.push("Website Designer")
+         } else {
+           roles.push("Unknown")
+         }
+       }
+       list.push(`<div class="dev">
+              <img src="${data["devs"][i]["pfp"]}" alt="${data["devs"][i]["name"]}'s profile">
+              <h3>${data["devs"][i]["name"]}</h3>
+              <p>${roles.join(", ")}</p>
+            </div>`)
+     }
+      document.getElementById("Developers").innerHTML = list.join(`
+      `);
+   }};
+
+xhr.send();
+
     </script>
 </body>
 
