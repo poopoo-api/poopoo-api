@@ -1,4 +1,5 @@
 var Jimp = require('jimp');
+
 function isValidUrl(string) {
   try {
     new URL(string);
@@ -8,6 +9,7 @@ function isValidUrl(string) {
 
   return true;
 }
+
 export default async (req, res) => {
   let url = req.query.url
   const iterations = req.query.iterations ? Number(req.query.iterations) : 10
