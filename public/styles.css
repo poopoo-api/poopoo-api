@@ -99,6 +99,11 @@ footer {
   margin-top: 3.5em;
 }
 
+footer p {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 footer a {
   color: #d0adf0;
 }

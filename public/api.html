@@ -9,9 +9,10 @@
   <link rel="stylesheet" type="text/css" href="./styles.css">
 
   <!-- Embed -->
-  <meta name="og:tittle" content="PooPoo API 💩">
-  <meta name="og:description" content="A very simple (but bad) API that you might use">
-  <meta name="og:image" content="./images/example.png">
+  <meta name="og:title" content="PooPoo API | Current APIs">
+  <meta name="og:description" content='PooPoo API is an Application Programming Interface ("API") which makes your coding life easier by providing some pre-made codes that you can use in your Discord Bots, websites, etc. Some crediting would be nice, but not mandatory. This is an open-sourced project, the Github Repository can be viewed [here](https://github.com/frostzzone/poopoo-api).'>
+  <meta name="og:image" content="https://poopoo-api.vercel.app/api/image?url=https://poopoo-api.vercel.app/api">
+  <meta name="keywords" content="poop, api, frostzzone, eruption, kingerous, jeremy, coding, discord, image, password, github">
   <meta name="theme-color" content="#f56642" />
   <tittle>PooPoo API | Current APIs</tittle>
 
@@ -23,21 +24,25 @@
       background-image: url("images/banner2.jpg");
     }
 
+    main h2 {
+      background-image: linear-gradient(90deg, rgba(56,74,255,1) 0%, rgba(196,0,255,1) 100%);
+    }
+    
     #utilities h2 {
-      color: white;
-      text-align: left;
-      background-clip: border-box;
-      -webkit-background-clip: border-box;
-      -webkit-text-fill-color: initial;
-      animation: none;
-    } 
+      color: white !important;
+      text-align: left !important;
+      background-clip: none !important;
+      -webkit-background-clip: none !important;
+      -webkit-text-fill-color: initial !important;
+      animation: none !important;
+    }
     
     #search {
-    width: 100%;
-    padding: 0.8em;
-    background-color: #3b3b3b;
-    font-size: 92%;
-    border: 0.85px solid #0d0d0d;
+      width: 100%;
+      padding: 0.8em;
+      background-color: #3b3b3b;
+      font-size: 92%;
+      border: 0.85px solid #0d0d0d;
     }
     
     .cardlist {
@@ -172,9 +177,9 @@
     }
 
     .card:hover:not(.card-empty):not(.card-disabled) {
+      transform: scale(1.1);
       z-index: 2;
       box-shadow: 0 0 5px black;
-      background-color: #394855;
     }
 
     .card a {
@@ -250,21 +255,10 @@
 </head>
 
 <body>
-    <nav>
-        <ul class="navigation-bar">
-          <li><a href="./#about">About</a></li>
-          <li><a href="./api">Current APIs</a></li>
-          <li><a href="./#faq">FAQ</a></li>
-          <li style="float: right"><a href="https://discord.gg/MfEXDm5mr6"><svg height="32" width="118" class="filter-svg-nav" >
-     <image xlink:href="images/discord.svg" src="images/discord.png" height="32"/>    
-</svg></a>
-        </ul>
-      </nav>
     <header>
         <div>
             <h1>Current APIs</h1>
             <p>Enjoy a list of the current poo-poos</p>
-            <p style="color: red;">⚠️ This page is under construction! ⚠️</p>
         </div>
     </header>
 
@@ -273,187 +267,193 @@
         <h2>Searching is here! <code><small>beta</small></code></h2>
         <input type="search" id="search" placeholder="Search for your favorite APIs...">
       </section>
-        <section id="image-apis">
-            <h2 style="background-image: linear-gradient(90deg, rgba(56,74,255,1) 0%, rgba(196,0,255,1) 100%)">Image APIs</h2>
-            <div class="cardlist">
-              <article class="card" data-tittle="Take high quality website screenshots with this API!">
-                <a href="api/image?url=https://google.com">
-                  <h3>Web Screenshoter</h3>
-                  <p class="card-desc">Take high quality website screenshots with this API!</p>
-                  <p class="card-url">/image?url=https://google.com</p>
-                  <img src="https://poopoo-api.vercel.app/api/image?url=https://google.com">
+      <section id="image-apis">
+        <h2>Image APIs</h2>
+        <div class="cardlist">
+          <article class="card" data-desc="Take high quality website screenshots with this API!">
+            <a href="api/image?url=https://google.com">
+              <h3>Web Screenshoter</h3>
+              <p class="card-desc">Take high quality website screenshots with this API!</p>
+              <p class="card-url">/image?url=https://google.com</p>
+              <img src="https://poopoo-api.vercel.app/api/image?url=https://google.com">
+            </a>
+          </article>
+          <article class="card">
+            <a href="api/invert?url=https://poopoo-api.vercel.app/images/example.png">
+              <h3>Image Inverter</h3>
+              <p class="card-desc">Invert the colors of an image with this simple API!</p>
+              <p class="card-url">/invert?url=https://poopoo-api.vercel.app/images/example.png</p>
+              <img src="https://poopoo-api.vercel.app/api/invert?url=https://poopoo-api.vercel.app/images/example.png">
+            </a>
+          </article>
+          <article class="card" data-desc="Grayscale an image with this simple API!">
+            <a href="api/grayscale?url=https://poopoo-api.vercel.app/images/example.png">
+              <h3>Grayscale Image</h3>
+              <p class="card-desc">Grayscale an image with this simple API!</p>
+              <p class="card-url">/grayscale?url=https://poopoo-api.vercel.app/images/example.png</p>
+              <img src="https://poopoo-api.vercel.app/api/grayscale?url=https://poopoo-api.vercel.app/images/example.png">
+            </a>
+          </article>
+          <article class="card" data-desc="Pixelate an image with this simple API!">
+            <a href="api/pixel?url=https://poopoo-api.vercel.app/images/example.png">
+              <h3>Pixlate Image</h3>
+              <p class="card-desc">Pixelate an image with this simple API!</p>
+              <p class="card-url">/pixel?strength=10&url=https://poopoo-api.vercel.app/images/example.png</p>
+              <img src="https://poopoo-api.vercel.app/api/pixel?strength=10&url=https://poopoo-api.vercel.app/images/example.png">
+            </a>
+          </article>
+          <article class="card" data-desc="Uh oh, watch out for that dangerous gun! | Add a gun to any image!">
+            <a href="api/gun?url=https://poopoo-api.vercel.app/images/example.png">
+              <h3>Gun</h3>
+              <p class="card-desc">Uh oh, watch out for that dangerous gun! | Add a gun to any image!</p>
+              <p class="card-url">/gun?url=https://poopoo-api.vercel.app/images/example.png</p>
+              <img style="width:70%;" src="https://poopoo-api.vercel.app/api/gun?url=https://poopoo-api.vercel.app/images/example.png">
+            </a>
+          </article>
+          <article class="card" data-desc="This poop is epic! | Put a picture on a poo!">
+            <a href="api/poopify?url=https://poopoo-api.vercel.app/images/epicFace.png">
+              <h3>Poopify</h3>
+              <p class="card-desc">This poop is epic! | Put a picture on a poo!</p>
+              <p class="card-url">/poopify?url=https://poopoo-api.vercel.app/images/epicFace.png</p>
+              <img style="width:70%;" src="https://poopoo-api.vercel.app/api/poopify?url=https://poopoo-api.vercel.app/images/epicFace.png">
+            </a>
+          </article>
+          <article class="card" data-desc="It's cooked alright. | Deepfry any image!">
+            <a href="api/deepfry?url=https://poopoo-api.vercel.app/images/example.png">
+              <h3>Deepfry</h3>
+              <p class="card-desc">It's cooked alright. | Deepfry any image!</p>
+              <p class="card-url">/deepfry?url=https://poopoo-api.vercel.app/images/example.png</p>
+              <img src="https://poopoo-api.vercel.app/api/deepfry?url=https://poopoo-api.vercel.app/images/example.png">
+            </a>
+          </article>
+          <article class="card" data-desc="Nah, yah meme.">
+            <a href="api/image/drake?upperText=hello&lowerText=hallo">
+              <h3>Drakeposting</h3>
+              <p class="card-desc">The famous drake "Nah, yah" meme.</p>
+              <p class="card-url">/image/drake?upperText=hello&lowerText=hallo</p>
+              <img src="https://poopoo-api.vercel.app/api/image/drake?upperText=hello&lowerText=hallo">
+            </a>
+          </article>
+          <article class="card" data-desc="THe famous big brain guy meme, 🧠🧠🧠🧠🧠">
+            <a href="api/image/bigBrainGuy?text=Forgive%20is%20not%20%20an%20excuse">
+              <h3>Big Brain Guy</h3>
+              <p class="card-desc">🧠🧠🧠🧠🧠</p>
+              <p class="card-url">image/bigBrainGuy?text=Forgive%20is%20not%20%20an%20excuse</p>
+              <img src="https://poopoo-api.vercel.app/api/image/bigBrainGuy?text=Forgive%20is%20not%20%20an%20excuse">
+            </a>
+          </article>
+          <article class="card" data-desc="Make a surprised Pikachu meme!">
+            <a href="api/pikachu?text=macncheese">
+              <h3>Pikachu</h3>
+              <p class="card-desc">Make a surprised Pikachu meme!</p>
+              <p class="card-url">/pikachu?text=macncheese</p>
+              <img src="https://poopoo-api.vercel.app/api/pikachu?text=macncheese">
+            </a>
+          </article>
+          <article class="card" data-desc="Click to get info on some other image generations stuff.">
+            <a href="api/image/gen">
+              <h3>More Image APIs</h3>
+              <p class="card-desc">Click to get info on some other image generations stuff.</p>
+              <img style="width: 70%" src="https://cdn-0.emojis.wiki/emoji-pics/twitter/question-mark-twitter.png" />
+            </a>
+          </article>
+        </div>
+      </section>
+      <section id="number-text-apis">
+        <h2>Number/Text APIs</h2>
+        <div class="cardlist">
+          <article class="card" data-desc="Randomly gererate a UUID, it will always be different!">
+            <a href="api/uuid">
+              <h3>UUID generator</h3>
+              <p>Randomly gererate a UUID, it will always be different!</p>
+              <p class="card-url">/api/uuid</p>
+            </a>
+          </article>
+          <article class="card" data-desc="Convert Roman numbers into normal intergers or do the oposite!">
+            <a href="api/roman">
+              <h3>Roman Numerals Converter</h3>
+              <p class="card-desc">Convert Roman numbers into normal intergers or do the oposite!</p>
+              <p class="card-url">/api/roman</p>
+            </a>
+          </article>
+          <article class="card" data-desc="Remove all emojis from text | Give a list of emojis | Remove every character except letters and numbers">
+            <a href="api/remove">
+              <h3>Remove Emojis/Characters</h3>
+              <p class="card-desc">Remove all emojis from text | Give a list of emojis | Remove every character except letters and numbers</p>
+              <p class="card-url">/api/remove</p>
+            </a>
+          </article>
+          <article class="card" data-desc="Emojify text for discord">
+            <a href="api/emojify">
+              <h3>Emojify text for discord</h3>
+              <p class="card-desc">Turns inputed text to emojis</p>
+              <p class="card-url">/api/emojify</p>
+            </a>
+          </article>
+          <article class="card" data-desc="Simplifying a list by removing all lists in it!">
+            <a href="api/flat">
+              <h3>Flatten Lists</h3>
+              <p class="card-desc">Simplifying a list by removing all lists in it!</p>
+              <p class="card-url">/api/flat</p>
+            </a>
+          </article>
+          <article class="card" data-desc="Generate a random password, it will always be different everytime!">
+            <a href="api/password">
+              <h3>Password Generator</h3>
+              <p class="card-desc">Generate a random password, it will always be different everytime!</p>
+              <p class="card-url">/password</p>
+            </a>
+              </article>
+              <article class="card" data-desc="Encode any piece of text into binary numbers! *01101110 01101001 01100011 01100101*">
+                <a href="api/encode?text=hi">
+                  <h3>Binary Encoder</h3>
+                  <p class="card-desc">Encode any piece of text into binary numbers! *01101000 01101001*</p>
+                  <p class="card-url">/encode?text=text</p>
                 </a>
               </article>
-              <article class="card" data-tittle="Invert the colors of an image with this simple API!">
-                <a href="api/invert?url=https://poopoo-api.vercel.app/images/example.png">
-                  <h3>Image Inverter</h3>
-                  <p class="card-desc">Invert the colors of an image with this simple API!</p>
-                  <p class="card-url">/invert?url=https://poopoo-api.vercel.app/images/example.png</p>
-                  <img src="https://poopoo-api.vercel.app/api/invert?url=https://poopoo-api.vercel.app/images/example.png">
-                </a>
-              </article>
-              <article class="card" data-tittle="Grayscale an image with this simple API!">
-                <a href="api/grayscale?url=https://poopoo-api.vercel.app/images/example.png">
-                  <h3>Grayscale Image</h3>
-                  <p class="card-desc">Grayscale an image with this simple API!</p>
-                  <p class="card-url">/grayscale?url=https://poopoo-api.vercel.app/images/example.png</p>
-                  <img src="https://poopoo-api.vercel.app/api/grayscale?url=https://poopoo-api.vercel.app/images/example.png">
-                </a>
-              </article>
-              <article class="card" data-tittle="Pixelate an image with this simple API!">
-                <a href="api/pixel?url=https://poopoo-api.vercel.app/images/example.png">
-                  <h3>Pixlate Image</h3>
-                  <p class="card-desc">Pixelate an image with this simple API!</p>
-                  <p class="card-url">/pixel?strength=10&url=https://poopoo-api.vercel.app/images/example.png</p>
-                  <img src="https://poopoo-api.vercel.app/api/pixel?strength=10&url=https://poopoo-api.vercel.app/images/example.png">
-                </a>
-              </article>
-              <article class="card" data-tittle="Uh oh, watch out for that dangerous gun! | Add a gun to any image!">
-                <a href="api/gun?url=https://poopoo-api.vercel.app/images/example.png">
-                  <h3>Gun</h3>
-                  <p class="card-desc">Uh oh, watch out for that dangerous gun! | Add a gun to any image!</p>
-                  <p class="card-url">/gun?url=https://poopoo-api.vercel.app/images/example.png</p>
-                  <img style="width:70%;" src="https://poopoo-api.vercel.app/api/gun?url=https://poopoo-api.vercel.app/images/example.png">
-                </a>
-              </article>
-              <article class="card" data-tittle="This poop is epic! | Put a picture on a poo!">
-                <a href="api/poopify?url=https://poopoo-api.vercel.app/images/epicFace.png">
-                  <h3>Poopify</h3>
-                  <p class="card-desc">This poop is epic! | Put a picture on a poo!</p>
-                  <p class="card-url">/poopify?url=https://poopoo-api.vercel.app/images/epicFace.png</p>
-                  <img style="width:70%;" src="https://poopoo-api.vercel.app/api/poopify?url=https://poopoo-api.vercel.app/images/epicFace.png">
-                </a>
-              </article>
-              <article class="card" data-tittle="It's cooked alright. | Deepfry any image!">
-                <a href="api/deepfry?url=https://poopoo-api.vercel.app/images/example.png">
-                  <h3>Deepfry</h3>
-                  <p class="card-desc">It's cooked alright. | Deepfry any image!</p>
-                  <p class="card-url">/deepfry?url=https://poopoo-api.vercel.app/images/example.png</p>
-                  <img style="width:70%;" src="https://poopoo-api.vercel.app/api/deepfry?url=https://poopoo-api.vercel.app/images/example.png">
-                </a>
-              </article>
-              <article class="card" data-tittle="Nah, yah meme.">
-                <a href="api/image/drake?upperText=hello&lowerText=hallo">
-                  <h3>Drakeposting</h3>
-                  <p class="card-desc">The famous drake "Nah, yah" meme.</p>
-                  <p class="card-url">/image/drake?upperText=hello&lowerText=hallo</p>
-                  <img src="https://poopoo-api.vercel.app/api/image/drake?upperText=hello&lowerText=hallo">
-                </a>
-              </article>
-			  <article class="card" data-tittle="THe famous big brain guy meme, 🧠🧠🧠🧠🧠">
-		        <a href="api/image/bigBrainGuy?text=Forgive%20is%20not%20%20an%20excuse">
-			        <h3>Big Brain Guy</h3>
-		          	<p class="card-desc">🧠🧠🧠🧠🧠</p>
-		        	<p class="card-url">image/bigBrainGuy?text=Forgive%20is%20not%20%20an%20excuse</p>
-				    <img src="https://poopoo-api.vercel.app/api/image/bigBrainGuy?text=Forgive%20is%20not%20%20an%20excuse">
-	        	</a>
-              </article>
-              <article class="card" data-tittle="Make a surprised Pikachu meme!">
-                <a href="api/pikachu?text=macncheese">
-                  <h3>Pikachu</h3>
-                  <p class="card-desc">Make a surprised Pikachu meme!</p>
-                  <p class="card-url">/pikachu?text=macncheese</p>
-                  <img src="https://poopoo-api.vercel.app/api/pikachu?text=macncheese">
-                </a>
-                </article>
-                <article class="card" data-tittle="Click to get info on some other image generations stuff.">
-                  <a href="api/image/gen">
-                    <h3>More Image APIs</h3>
-                    <p class="card-desc">Click to get info on some other image generations stuff.</p>
-					          <img style="width: 70%" src="https://cdn-0.emojis.wiki/emoji-pics/twitter/question-mark-twitter.png" />
-                  </a>
-                </article>
-            </div>
-        </section>
-        <section id="number-text-apis">
-          <h2 style="background-image: linear-gradient(90deg, rgba(56,74,255,1) 0%, rgba(196,0,255,1) 100%)">Number/Text APIs</h2>
+            <article class="card" data-desc="Decode binary numbers into normal text / decimal numbers *nice*">
+              <a href="api/decode?binary=01101000 01101001">
+                <h3>Binary Decoder</h3>
+                <p class="card-desc">Decode binary numbers into normal text / decimal numbers *hi*</p>
+                <p class="card-url">/decode?binary=binary</p>
+              </a>
+            </article>
+            <article class="card">
+              <a href="api/spoil?text=hello">
+                <h3>Annoying Discord Spoilers</h3>
+                <p class="card-desc">Wow, these spoilers are so annoying!</p>
+                <p class="card-url">/spoil?text=text</p>
+              </a>
+            </article>
+        </div>
+      </section>
+        <section id="others">
+          <h2>Other APIs</h2>
           <div class="cardlist">
-            <article class="card" data-tittle="An API that can randomly generate a uuid.">
-                    <a href="api/uuid">
-                        <h3>UUID generator</h3>
-                      <p data-tittle="Convert Roman numbers into normal intergers or do the oposite!" class="card-desc">Randomly gererate a UUID, it will always be different!</p>
-                        <p class="card-url">/api/uuid</p>
-                    </a>
-                </article>
-            <article class="card" data-tittle="An API ato convert roman numerals">
-              <a href="api/roman">
-                <h3>Roman Numerals Converter</h3>
-                          <p data-tittle="Convert Roman numbers into normal intergers or do the oposite!" class="card-desc">Convert Roman numbers into normal intergers or do the oposite!</p>
-                          <p class="card-url">/api/roman</p>
-                      </a>
-                  </article>
-                  <article class="card" data-tittle="An API to remove stuff from text">
-                    <a href="api/remove">
-                      <h3>Remove Emojis/Characters</h3>
-                        <p data-tittle="Remove all emojis from text | Give a list of emojis | Remove every character except letters and numbers" class="card-desc">Remove all emojis from text | Give a list of emojis | Remove every character except letters and numbers</p>
-                        <p class="card-url">/api/remove</p>
-                      </a>
-                </article>
-                <article class="card" data-tittle="An API to Flatten lists">
-                      <a href="api/flat">
-                          <h3>Remove lists from lists (flatten list)</h3>
-                          <p>go to <b>/flat </b> for more info</p>
-                      </a>
-                </article>
+            <article class="card" data-desc="Show almost every information of a Github user with this API!">
+              <a href="api/github?name=frostzzone">
+                <h3>Github Info</h3>
+                <p class="card-desc">Show almost every information of a Github user with this API!</p>
+                <p class="card-url">/github?name=user</p>
+              </a>
+            </article>
+            <article class="card" data-desc="Search for channels and videos on YouTube with this API!">
+              <a href="api/youtube">
+                <h3>Youtube search</h3>
+                <p class="card-desc">Search for channels and videos on YouTube with this API!</p>
+                <p class="card-url">/api/youtube</p>
+              </a>
+            </article>
+            <article class="card" data-desc="This API can give you a random question. Perfect for QOTD (question of the day) bots!">
+              <a href="api/qotd">
+                <h3>QOTD</h3>
+                <p class="card-desc">This API can give you a random question. Perfect for QOTD (question of the day) bots!</p>
+                <p class="card-url">/api/qotd</p>
+              </a>
+            </article>
           </div>
         </section>
-        <section id="unorganized">
-          <h2 style="background-image: linear-gradient(90deg, rgba(56,74,255,1) 0%, rgba(196,0,255,1) 100%)">Unorganized</h2>
-          <div class="cardlist" id="workingOn">
-                <article class="card" data-tittle="An API that can show information about a Github user.">
-                    <a href="api/github?name=frostzzone">
-                        <h3>Github Info</h3>
-                        <p>/github?name=user</p>
-                    </a>
-                </article>
-              <article class="card" data-tittle="An API that can search for channels and videos on youtube">
-                    <a href="api/youtube">
-                        <h3>Youtube search</h3>
-                        <p>go to <b>/youtube</b> for more info</p>
-                    </a>
-                </article>
-                <article class="card" data-tittle="An API that can randomly generate a question (good for QOTD bots).">
-                    <a href="api/qotd">
-                        <h3>QOTD</h3>
-                        <p>/qotd</p>
-                    </a>
-                </article>
-              <article class="card" data-tittle="An API that can randomly generate a password.">
-                    <a href="api/password">
-                        <h3>Password Generator</h3>
-                        <p>/password</p>
-                    </a>
-                </article>
-              <article class="card" data-tittle="An API to encode text to binary">
-                    <a href="api/encode?text=hi">
-                        <h3>Binary Encoder</h3>
-                        <p>/encode?text=text</p>
-                    </a>
-                </article>
-              <article class="card" data-tittle="An API to decode binary to text">
-                    <a href="api/decode?binary=01101000 01101001">
-                        <h3>Binary Decoder</h3>
-                        <p>/decode?binary=binary</p>
-                    </a>
-              </article>
-              <article class="card" data-tittle="An API to make annoying spoilers">
-                    <a href="api/spoil?text=hello">
-                        <h3>Annoying Discord Spoilers</h3>
-                        <p>/spoil?text=text</p>
-                    </a>
-              </article>
-            </div>
-        </section>
     </main>
-
-   <footer>
-        <div>
-            <h2>PooPoo API</h2>
-            <p class="footer-credits">Developed by PooPoo Devs (frostzzone, Eruption, Retro, Kingerous, JeremyGamer13) 2022</p>
-            <p style="color: #d4d4d4; padding-top: 1.2em;"><b>Featured:</b> <a href="https://www.npmjs.com/package/@retro_ig/poopoo-api-package" target="_blank">PooPoo API npm package</a></p>
-        </div>
-    </footer>
-
     <style>
         .qc-cmp-showing {
             visibility: hidden !important;
@@ -468,6 +468,7 @@
         }
     </style>
 </body>
-<script src="./search.js"></script>
-<script src="./cardAnimations.js"></script>
+<script src="./javascript/apiSearch.js"></script>
+<script src="./javascript/siteComponents.js"></script>
+<script src="./javascript/spawnDevelopers.js"></script>
 </html>

@@ -9,9 +9,10 @@
   <link rel="stylesheet" type="text/css" href="./styles.css">
 
   <!-- Embed -->
-  <meta name="og:title" content="PooPoo API 💩">
-  <meta name="og:description" content="A very simple (but bad) API that you might use">
-  <meta name="og:image" content="./images/example.png">
+  <meta name="og:title" content="PooPoo API | Home">
+  <meta name="og:description" content='PooPoo API is an Application Programming Interface ("API") which makes your coding life easier by providing some pre-made codes that you can use in your Discord Bots, websites, etc. Some crediting would be nice, but not mandatory. This is an open-sourced project, the Github Repository can be viewed [here](https://github.com/frostzzone/poopoo-api).'>
+  <meta name="og:image" content="https://poopoo-api.vercel.app/api/image?url=https://poopoo-api.vercel.app">
+  <meta name="keywords" content="poop, api, frostzzone, eruption, kingerous, jeremy, coding, discord, image, password, github">
   <meta name="theme-color" content="#f56642" />
   <title>PooPoo API | Home</title>
 
@@ -59,12 +60,6 @@
      #api {
        background-color: #121212; 
        margin: 0 -5.4%;
-/*       background-size: cover;
-      background-image: url("images/banner2.jpg");
-      background-repeat: no-repeat;
-      text-align: center;
-      display: flex;
-      justify-content: space-around; */
     }
 
     .pro-con {
@@ -196,16 +191,6 @@
 </head>
 
 <body>
-    <nav>
-        <ul class="navigation-bar">
-          <li><a href="#about">About</a></li>
-          <li><a href="/api">Current APIs</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li style="float: right"><a href="https://discord.gg/MfEXDm5mr6"><svg height="32" width="118" class="filter-svg-nav" >
-     <image xlink:href="images/discord.svg" src="images/discord.png" height="32"/>    
-</svg></a></li>
-        </ul>
-      </nav>
     <header>
         <div>
             <h1>PooPoo API</h1>
@@ -221,31 +206,6 @@
           <p><a class="github-button" href="https://github.com/frostzzone/poopoo-api" data-icon="octicon-star" data-show-count="true" aria-label="Star frostzzone/poopoo-api on GitHub">Star</a> <a class="github-button" href="https://github.com/frostzzone/poopoo-api/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork frostzzone/poopoo-api on GitHub">Fork</a> <a class="github-button" href="https://github.com/frostzzone/poopoo-api/issues" data-icon="octicon-issue-opened" data-show-count="true" aria-label="Issue frostzzone/poopoo-api on GitHub">Issue</a></p>
           <h2>Developers</h2>
           <div id="developers_spawn_point" class="developers">
-            <!--<div class="dev">
-              <img src="images/avatar/frostzzone.png" alt="frostzzone's profile">
-              <h3>frostzzone#4486</h3>
-              <p>Lead Developer</p>
-            </div>
-            <div class="dev">
-              <img src="images/avatar/eruption.png" alt="eruption's profile">
-              <h3>Eruption#8390</h3>
-              <p>Website Designer</p>
-            </div>
-            <div class="dev">
-              <img src="images/avatar/retro.png" alt="retro's profile">
-              <h3>Retro#2448</h3>
-              <p>API Developer</p>
-            </div>
-            <div class="dev">
-              <img src="images/avatar/kingerous.png" alt="kingerous's profile">
-              <h3>Kingerious#4777</h3>
-              <p>API Developer</p>
-            </div>
-            <div class="dev">
-              <img src="images/avatar/jeremygamer13.png" alt="jeremygamer13's profile">
-              <h3>JeremyGamer13#7984</h3>
-              <p>API Developer</p>
-            </div>-->
           </div>
         </section>
       <section id="api">
@@ -294,14 +254,6 @@
       </section>
     </main>
 
-    <footer>
-        <div>
-            <h2>PooPoo API</h2>
-          <p id="developers_footer_spawn_point" class="footer-credits">
-            <!--<p class="footer-credits">Developed by PooPoo Devs (frostzzone, Eruption, Retro, Kingerous, JeremyGamer13) 2022</p>-->
-            <p style="color: #d4d4d4; padding-top: 1.2em;"><b>Featured:</b> <a href="https://www.npmjs.com/package/@retro_ig/poopoo-api-package" target="_blank">PooPoo API npm package</a></p>
-        </div>
-    </footer>
     <script type="text/javascript" defer>
         // FAQ
         var navLinks = document.getElementById("navLinks")
@@ -325,7 +277,8 @@
             })
         } )
     </script>
-    <script src="./spawnDevelopers.js"></script>
+    <script src="./javascript/siteComponents.js"></script>
+    <script src="./javascript/spawnDevelopers.js"></script>
 </body>
 
 </html>
