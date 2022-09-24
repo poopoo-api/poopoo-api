@@ -43,6 +43,10 @@ nav > ul {
   float: left;
 }
 
+.discord {
+  float: right !important;
+}
+
 .navigation-bar > li > a {
   text-decoration: none;
   font-weight: 780;
@@ -212,4 +216,17 @@ main a:hover {
 /* search bar */
 .hide {
 	display: none;
+}
+
+@media only screen and (max-width: 500px) {
+  .discord {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 1336px) {
+  header {
+    background-attachment: fixed;
+  }
 }

@@ -5,7 +5,7 @@
         <li><a href="/">About</a></li>
         <li><a href="/api">Current APIs</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li style="float: right"><a href="https://discord.gg/MfEXDm5mr6"><svg height="32" width="118" class="filter-svg-nav" >
+        <li class="discord"><a href="https://discord.gg/MfEXDm5mr6"><svg height="32" width="118" class="filter-svg-nav" >
         <image xlink:href="images/discord.svg" src="images/discord.png" height="32"/>    
   </svg></a></li>
       </ul>
