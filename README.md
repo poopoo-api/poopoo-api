@@ -8,7 +8,7 @@ PooPoo API is an Application Programming Interface ("API") which makes your codi
 * Discord Server: https://discord.gg/MfEXDm5mr6.
 
 ## 🔎 Features
-More features will be added in the future!
+**This section will no longer be updated, please check out the [API page](https://poopoo-api.vercel.app/api) for detailed and up-to-date descriptions instead.**
 * Website Screenshoter: An API that can screenshot websites.
 * Color Inverter: An API to invert the color of images
 * Grayscale Image: An API to grayscale images
@@ -27,7 +27,6 @@ More features will be added in the future!
 
 ## 🔨 Contributions
 Contribution of any kinds are appreciated, simply crediting the API when you use it would work, or you can go further to report bugs, open issues, add more features through pull requests, etc. To get started:
-<!-- Changed setup instructions -->
 * Clone the project. Run `git clone https://github.com/frostzzone/poopoo-api`.
 * Run on node.js
 * Type `yarn install` in the console/shell (wait for it to finish)
