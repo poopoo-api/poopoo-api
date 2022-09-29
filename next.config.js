@@ -15,17 +15,21 @@ module.exports = {
       },
     ];
   },
-  /*async headers() {
+  async headers() {
     return [
       {
-        source: '/svg',
+        source: '/api/:slug*',
         headers: [
           {
-            key: 'Content-Type',
-            value: 'image/svg+xml',
+            key: 'Access-Control-Allow-Origin',
+            value: '*',
           },
+          {
+            key: 'Access-Control-Allow-Headers',
+            value: '*'
+          }
         ],
       },
     ]
-  },*/
+  },
 };
