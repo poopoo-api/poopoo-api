@@ -13,7 +13,7 @@ function isValidUrl(string) {
 export default async (req, res) => {
     let p1 = req.query.image1
     let p2 = req.query.image2
-    let mat = req.query.good.toLowercase() == 'true'
+    let mat = req.query.good.toLowerCase() == 'true'
     if((p1==null || p2==null) || (p1==undefined || p2==undefined)) return res.status(200).setHeader('Content-Type', 'application/json').send(JSON.stringify({error: "provide two images", example: "/ship?image1=https://poopoo-api.vercel.app/images/api/goodMatch.png&image2=https://poopoo-api.vercel.app/images/api/badMatch.png&good=false"}, null, 4));
     if(!(isValidUrl(p1) && isValidUrl(p2))) return res.status(200).setHeader('Content-Type', 'application/json').send(JSON.stringify({error: "provide a valid url for image1 and image2", example: "/ship?image1=https://poopoo-api.vercel.app/images/api/goodMatch.png&image2=https://poopoo-api.vercel.app/images/api/badMatch.png&good=false"}, null, 4));
     Jimp.read('https://poopoo-api.vercel.app/images/api/shipBase.png', (err, ship) => {
