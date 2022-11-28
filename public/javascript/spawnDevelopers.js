@@ -26,11 +26,15 @@ fetch('https://getpantry.cloud/apiv1/pantry/04190bfb-0547-43e3-879f-a50647c395b3
             const p = document.createElement("p")
           p.innerHTML = String(roles.join(", ")).replace(/</gmi, "&lt;")
           div.append(p)
+					try {
             spawnpoint.append(div)
+					} catch(err){}
         })
   // Auto update the footer
   const p = document.createElement("p")
   p.innerHTML = String(`Developed by PooPoo Devs (${devUsers.join(", ")}) ${(new Date()).getFullYear()}`).replace(/</gmi, "&lt;")
+			try {
   footer_spawnpoint.append(p)
+			} catch(err){}
     })
 })
