@@ -26,6 +26,18 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 2s all ease;
+}
+
+*.active{
+  transform: translateY(0);
+  opacity: 1;
+}
+
 nav > ul {
   z-index: 1000;
   overflow: hidden;

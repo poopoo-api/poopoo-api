@@ -16,7 +16,7 @@
 // Footer
 var footer = ` 
     <footer>
-      <div>
+      <div class="reveal">
         <h2>PooPoo API</h2>
         <p id="developers_footer_spawn_point" class="footer-credits">
         <p style="color: #d4d4d4; padding-top: 1.2em;"><b>Featured:</b> <a href="https://www.npmjs.com/package/@retro_ig/poopoo-api-package" target="_blank">PooPoo API npm package</a></p>
