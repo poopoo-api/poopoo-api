@@ -1,7 +1,6 @@
 import fetch from 'node-fetch';
 export default async(req, res) => {
   const object = req.body
-	console.log(object.url)
   
   if(object["poopycode"] == process.env['poopydoopy']) { 
     let options = object["options"] || {};
