@@ -1,10 +1,11 @@
 import fetch from 'node-fetch';
 export default async(req, res) => {
   const object = req.body
+	console.log(object.url)
   
   if(object["poopycode"] == process.env['poopydoopy']) { 
     let options = object["options"] || {};
-    const response = await fetch(object["url"], JSON.parse(options));
+    const response = await fetch(object["url"], options);
     const data = await response.json();
      res.send(JSON.stringify(data, null, 4))
   } else {
